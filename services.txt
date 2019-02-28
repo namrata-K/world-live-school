@@ -1,0 +1,11 @@
+1. Oppurtunities 
+We aim at providing a better shot at education to the orphans enrolled in our system by connecting them to donors from across the World. The top 3 scores if our class room programs will be recommended to the logged in donor. 
+
+2. Virtual Classroom Experience
+We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all marterials. 
+
+3. Text to Speech 
+Targeting iliiteracy and visual impairement, we introduced the feature of text-of-speech to help students navigate our websites, convert pdf, docs to audio. 
+
+4. Interactive Platform 
+Dynamic Quizzes on previously viewed courses, recommendations based on reviews, Quizzes, Games, Public Forum to communicate with teachers, children all over the World to keep our site engaging. 

@@ -1,0 +1,233 @@
+<html>
+<head>
+    <style>
+    div {
+  background-color: lightgrey;
+  width: 400px;
+  border: 25px orange;
+  padding: 25px;
+  margin: 25px;
+}
+</style>
+<title>
+English Quiz
+</title>
+<body background=white> 
+        <div>
+        <center>
+<script language=JavaScript>
+var i=1, num_Of_Question=7;
+questions = new Array() 
+questions[1] ="Articles come before?";
+questions[2] ="DO is a?";
+questions[3] ="GO's Third form of verb?";
+questions[4] ="Buy's third form of verb?";
+questions[5] ="HAD is used in?";
+questions[6] ="verb + ing is used in?";
+questions[7] ="Perfect tense uses which form of verb?";
+
+answerA=new Array()
+answerA[1]="vowels";
+answerA[2]="verb";
+answerA[3]="went";
+answerA[4]="brought";
+answerA[5]="past continuous tense";
+answerA[6]="Indefinite tense";
+answerA[7]="2";
+
+answerB=new Array()
+answerB[1]="consonants";
+answerB[2]="noun";
+answerB[3]="gone";
+answerB[4]="bought";
+answerB[5]="past perfect tense";
+answerB[6]="continuous tense";
+answerB[7]="3";
+
+answerC=new Array()
+answerC[1]="None of these";
+answerC[2]="None of these";
+answerC[3]="None of these";
+answerC[4]="None of these";
+answerC[5]="None of these";
+answerC[6]="None of these";
+answerC[7]="None of these";
+
+rightAnswer=new Array()
+rightAnswer[1]="consonants";
+rightAnswer[2]="noun";
+rightAnswer[3]="gone";
+rightAnswer[4]="bought";
+rightAnswer[5]="past perfect tense";
+rightAnswer[6]="continuous tense";
+rightAnswer[7]="3";
+var score=0;
+function preQuestion()
+{
+var radios = document.getElementsByName("quiz");
+var option;
+
+    for (var j = 0; j < radios.length; j++) {       
+        if (radios[j].checked) {
+           option=radios[j].value;
+        radios[j].checked=false;
+            break;
+        }
+    }
+
+    if(option==rightAnswer[i])
+    {
+        score=score+1;
+        
+    }
+    
+    i--;    
+    if(i==0)
+    {
+    alert("This is first Question");
+    i++;
+    }
+    
+    var x=document.getElementById('myTable').rows
+        var y=x[0].cells
+        y[0].innerHTML=i + ".\t";
+    y[1].innerHTML=questions[i];
+    getOptionA();
+}
+function nextQuestion()
+{
+
+var radios = document.getElementsByName("quiz");
+var option;
+
+    for (var j = 0; j < radios.length; j++) {       
+        if (radios[j].checked) {
+            option=radios[j].value;
+        radios[j].checked=false;
+                break;
+        }
+    }
+
+    if(option==rightAnswer[i])
+    {
+        score=score+1;
+        
+    }
+    i++;
+    if(i>num_Of_Question)
+    {
+    alert("This is last Question");
+    i--;
+    }   
+    var x=document.getElementById('myTable').rows
+        var y=x[0].cells
+        y[0].innerHTML=i + ".\t";
+    y[1].innerHTML=questions[i];
+    getOptionA();
+}
+function getOptionA()
+{
+var x=document.getElementById('myTable').rows
+        var y=x[1].cells
+        y[1].innerHTML=answerA[i];
+getOptionB();
+}
+function getOptionB()
+{
+var x=document.getElementById('myTable').rows
+        var y=x[2].cells
+        y[1].innerHTML=answerB[i];
+getOptionC();
+}
+function getOptionC()
+{
+var x=document.getElementById('myTable').rows
+        var y=x[3].cells
+        y[1].innerHTML=answerC[i];
+}
+
+function showScore() //score is updated only after clicking next or previous button not by clicking the answer and checking in order to know whether your answer is correct or not.
+{
+var radios = document.getElementsByName("quiz");
+
+
+for (var j = 0; j < radios.length; j++) {       
+        
+           
+        radios[j].checked=false;
+        
+    }
+ alert("Your score is "+ score);
+}
+</script>
+</head>
+<body>
+
+<fieldset>
+<legend align=center><B> ENGLISH QUIZ </B></legend>
+<table id=myTable style=" color:Black">
+<tr>
+<td ><script language=JavaScript>
+//var i=1;
+document.write(i + ".\t");
+</script>
+</td>
+<td>
+<script language=JavaScript>
+document.write(questions[i]);
+</script>
+
+</td>
+</tr>
+<tr><td>
+<input type = "radio" value="1" name = "quiz"></td>
+<td>
+<script language=JavaScript>
+document.write(answerA[i]);
+</script></td></tr>
+<tr><td>
+<input type = "radio" value ="2" name = "quiz">
+</td><td>
+<script language=JavaScript>
+document.write(answerB[i]);
+</script></td></tr>
+<tr>
+<td>
+<input type = "radio" value ="3" name = "quiz"></td>
+<td>
+<script language=JavaScript>
+document.write(answerC[i]);
+</script></td></tr>
+<tr>
+<!__<input type=button value=Quit onclick=quit()>
+</tr>
+</table>
+<a href=javascript:preQuestion();><img src=1.png style="position:relative; right:40px" width=50 height=50></a>
+<a href=javascript:showScore();><img src=s.png  style="position:relative;right:30px" width=65 height=50>                                   
+<a href=javascript:nextQuestion();><img src=2.png  style="position:relative; left:-19px" width=50 height=50>
+</a>                                            
+
+</fieldset>
+</form>
+</div>
+</body>
+<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+
+<script>
+	Weglot.setup({
+
+	  api_key: 'wg_02d8b91a1274c5774c7dc11ae2db765b8',
+	  
+	  originalLanguage: 'en',
+
+	  destinationLanguages : 'fr,es,hi',
+
+	  styleOpt : { fullname: true , withname: true , is_dropdown: true , classF: "wg-flags flag-3" },
+	 });
+
+</script>
+</html>
+
+
+
+

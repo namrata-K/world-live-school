@@ -1,0 +1,234 @@
+<html>
+ <style>
+    div {
+  background-color: lightgrey;
+  width: 400px;
+  border: 25px orange;
+  padding: 25px;
+  margin: 25px;
+}
+</style>
+<head>
+	
+<title>
+Maths Quiz
+</title>
+<body background=white> 
+		<div>
+		<center>
+<script language=JavaScript>
+var i=1, num_Of_Question=7;
+questions = new Array() 
+questions[1] ="2+3=?";
+questions[2] ="127+423=?";
+questions[3] ="8+8+8+8=?";
+questions[4] ="If 5 is added 5 times to itself, what will be the value?";
+questions[5] ="5+0?";
+questions[6] ="198+122=?";
+questions[7] ="4+9=?";
+
+answerA=new Array()
+answerA[1]="5";
+answerA[2]="500";
+answerA[3]="24";
+answerA[4]="20";
+answerA[5]="0";
+answerA[6]="200";
+answerA[7]="12";
+
+answerB=new Array()
+answerB[1]="6";
+answerB[2]="550";
+answerB[3]="32";
+answerB[4]="25";
+answerB[5]="5";
+answerB[6]="320";
+answerB[7]="13";
+
+answerC=new Array()
+answerC[1]="7";
+answerC[2]="650";
+answerC[3]="30";
+answerC[4]="30";
+answerC[5]="6";
+answerC[6]="330";
+answerC[7]="11";
+
+rightAnswer=new Array()
+rightAnswer[1]=1;
+rightAnswer[2]=2;
+rightAnswer[3]=2;
+rightAnswer[4]=2;
+rightAnswer[5]=2;
+rightAnswer[6]=2;
+rightAnswer[7]=2;
+var score=0;
+function preQuestion()
+{
+var radios = document.getElementsByName("quiz");
+var option;
+
+    for (var j = 0; j < radios.length; j++) {       
+        if (radios[j].checked) {
+           option=radios[j].value;
+		radios[j].checked=false;
+            break;
+        }
+    }
+
+	if(option==rightAnswer[i])
+	{
+		score=score+1;
+		
+	}
+	
+	i--;	
+	if(i==0)
+	{
+	alert("This is first Question");
+	i++;
+	}
+	
+	var x=document.getElementById('myTable').rows
+    	var y=x[0].cells
+    	y[0].innerHTML=i + ".\t";
+	y[1].innerHTML=questions[i];
+	getOptionA();
+}
+function nextQuestion()
+{
+
+var radios = document.getElementsByName("quiz");
+var option;
+
+    for (var j = 0; j < radios.length; j++) {       
+        if (radios[j].checked) {
+           	option=radios[j].value;
+		radios[j].checked=false;
+            	break;
+        }
+    }
+
+	if(option==rightAnswer[i])
+	{
+		score=score+1;
+		
+	}
+	i++;
+	if(i>num_Of_Question)
+	{
+	alert("This is last Question");
+	i--;
+	}	
+	var x=document.getElementById('myTable').rows
+    	var y=x[0].cells
+    	y[0].innerHTML=i + ".\t";
+	y[1].innerHTML=questions[i];
+	getOptionA();
+}
+function getOptionA()
+{
+var x=document.getElementById('myTable').rows
+    	var y=x[1].cells
+    	y[1].innerHTML=answerA[i];
+getOptionB();
+}
+function getOptionB()
+{
+var x=document.getElementById('myTable').rows
+    	var y=x[2].cells
+    	y[1].innerHTML=answerB[i];
+getOptionC();
+}
+function getOptionC()
+{
+var x=document.getElementById('myTable').rows
+    	var y=x[3].cells
+    	y[1].innerHTML=answerC[i];
+}
+
+function showScore() //score is updated only after clicking next or previous button not by clicking the answer and checking in order to know whether your answer is correct or not.
+{
+var radios = document.getElementsByName("quiz");
+
+
+for (var j = 0; j < radios.length; j++) {       
+        
+           
+		radios[j].checked=false;
+        
+    }
+ alert("Your score is "+ score);
+}
+</script>
+</head>
+<body>
+
+<fieldset>
+<legend align=center> MATHS QUIZ </legend>
+<table id=myTable style=" color:Black">
+<tr>
+<td ><script language=JavaScript>
+//var i=1;
+document.write(i + ".\t");
+</script>
+</td>
+<td>
+<script language=JavaScript>
+document.write(questions[i]);
+</script>
+
+</td>
+</tr>
+<tr><td>
+<input type = "radio" value="1" name = "quiz"></td>
+<td>
+<script language=JavaScript>
+document.write(answerA[i]);
+</script></td></tr>
+<tr><td>
+<input type = "radio" value ="2" name = "quiz">
+</td><td>
+<script language=JavaScript>
+document.write(answerB[i]);
+</script></td></tr>
+<tr>
+<td>
+<input type = "radio" value ="3" name = "quiz"></td>
+<td>
+<script language=JavaScript>
+document.write(answerC[i]);
+</script></td></tr>
+<tr>
+<!__<input type=button value=Quit onclick=quit()>
+</tr>
+</table>
+<a href=javascript:preQuestion();><img src=1.png style="position:relative; right:40px" width=50 height=50></a>
+<a href=javascript:showScore();><img src=s.png  style="position:relative;right:30px" width=50 height=50>                                   
+<a href=javascript:nextQuestion();><img src=2.png  style="position:relative; left:-19px" width=50 height=50>
+</a>											
+
+</fieldset>
+</form>
+</div>
+</body>
+<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+
+<script>
+	Weglot.setup({
+
+	  api_key: 'wg_02d8b91a1274c5774c7dc11ae2db765b8',
+	  
+	  originalLanguage: 'en',
+
+	  destinationLanguages : 'fr,es,hi',
+
+	  styleOpt : { fullname: true , withname: true , is_dropdown: true , classF: "wg-flags flag-3" },
+	 });
+
+</script>
+</html>
+
+
+
+

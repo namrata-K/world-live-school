@@ -1,0 +1,235 @@
+
+<html>
+<head>
+	 <style>
+    div {
+  background-color: lightgrey;
+  width: 400px;
+  border: 25px orange;
+  padding: 25px;
+  margin: 25px;
+}
+</style>
+<title>
+Physics Quiz
+</title>
+<body background=white> 
+	<div>
+		
+		<center>
+<script language=JavaScript>
+var i=1, num_Of_Question=7;
+questions = new Array() 
+questions[1] ="Force=?";
+questions[2] ="Momentum=?";
+questions[3] ="Which one is converging=?";
+questions[4] ="v=?";
+questions[5] ="Speed=?";
+questions[6] ="How many states of matter are there?";
+questions[7] ="Who discovered graity?";
+
+answerA=new Array()
+answerA[1]="m*a";
+answerA[2]="m*v";
+answerA[3]="convex";
+answerA[4]="u+at";
+answerA[5]="distance/time";
+answerA[6]="3";
+answerA[7]="Newton";
+
+answerB=new Array()
+answerB[1]="m*v";
+answerB[2]="m*a";
+answerB[3]="concave";
+answerB[4]="u-at";
+answerB[5]="time/distance";
+answerB[6]="4";
+answerB[7]="Rutherford";
+
+answerC=new Array()
+answerC[1]="None of these";
+answerC[2]="None of these";
+answerC[3]="None of these";
+answerC[4]="None of these";
+answerC[5]="None of these";
+answerC[6]="None of these";
+answerC[7]="None of these";
+
+rightAnswer=new Array()
+rightAnswer[1]="m*a";
+rightAnswer[2]="m*v";
+rightAnswer[3]="convex";
+rightAnswer[4]="u+at";
+rightAnswer[5]="distance/time";
+rightAnswer[6]="3";
+rightAnswer[7]="Newton";
+var score=0;
+function preQuestion()
+{
+var radios = document.getElementsByName("quiz");
+var option;
+
+    for (var j = 0; j < radios.length; j++) {       
+        if (radios[j].checked) {
+           option=radios[j].value;
+		radios[j].checked=false;
+            break;
+        }
+    }
+
+	if(option==rightAnswer[i])
+	{
+		score=score+1;
+		
+	}
+	
+	i--;	
+	if(i==0)
+	{
+	alert("This is first Question");
+	i++;
+	}
+	
+	var x=document.getElementById('myTable').rows
+    	var y=x[0].cells
+    	y[0].innerHTML=i + ".\t";
+	y[1].innerHTML=questions[i];
+	getOptionA();
+}
+function nextQuestion()
+{
+
+var radios = document.getElementsByName("quiz");
+var option;
+
+    for (var j = 0; j < radios.length; j++) {       
+        if (radios[j].checked) {
+           	option=radios[j].value;
+		radios[j].checked=false;
+            	break;
+        }
+    }
+
+	if(option==rightAnswer[i])
+	{
+		score=score+1;
+		
+	}
+	i++;
+	if(i>num_Of_Question)
+	{
+	alert("This is last Question");
+	i--;
+	}	
+	var x=document.getElementById('myTable').rows
+    	var y=x[0].cells
+    	y[0].innerHTML=i + ".\t";
+	y[1].innerHTML=questions[i];
+	getOptionA();
+}
+function getOptionA()
+{
+var x=document.getElementById('myTable').rows
+    	var y=x[1].cells
+    	y[1].innerHTML=answerA[i];
+getOptionB();
+}
+function getOptionB()
+{
+var x=document.getElementById('myTable').rows
+    	var y=x[2].cells
+    	y[1].innerHTML=answerB[i];
+getOptionC();
+}
+function getOptionC()
+{
+var x=document.getElementById('myTable').rows
+    	var y=x[3].cells
+    	y[1].innerHTML=answerC[i];
+}
+
+function showScore() //score is updated only after clicking next or previous button not by clicking the answer and checking in order to know whether your answer is correct or not.
+{
+var radios = document.getElementsByName("quiz");
+
+
+for (var j = 0; j < radios.length; j++) {       
+        
+           
+		radios[j].checked=false;
+        
+    }
+ alert("Your score is "+ score);
+}
+</script>
+</head>
+<body>
+
+<fieldset>
+<legend align=center> PHYSICS QUIZ </legend>
+<table id=myTable style=" color:Black">
+<tr>
+<td ><script language=JavaScript>
+//var i=1;
+document.write(i + ".\t");
+</script>
+</td>
+<td>
+<script language=JavaScript>
+document.write(questions[i]);
+</script>
+
+</td>
+</tr>
+<tr><td>
+<input type = "radio" value="1" name = "quiz"></td>
+<td>
+<script language=JavaScript>
+document.write(answerA[i]);
+</script></td></tr>
+<tr><td>
+<input type = "radio" value ="2" name = "quiz">
+</td><td>
+<script language=JavaScript>
+document.write(answerB[i]);
+</script></td></tr>
+<tr>
+<td>
+<input type = "radio" value ="3" name = "quiz"></td>
+<td>
+<script language=JavaScript>
+document.write(answerC[i]);
+</script></td></tr>
+<tr>
+<!__<input type=button value=Quit onclick=quit()>
+</tr>
+</table>
+<a href=javascript:preQuestion();><img src=1.png style="position:relative; right:40px" width=50 height=50></a>
+<a href=javascript:showScore();><img src=s.png style="position:relative;right:30px" width=50 height=50>                                   
+<a href=javascript:nextQuestion();><img src=2.png  style="position:relative; left:-19px" width=50 height=50>
+</a>											
+
+</fieldset>
+</form>
+</div>
+</body>
+<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+
+<script>
+	Weglot.setup({
+
+	  api_key: 'wg_02d8b91a1274c5774c7dc11ae2db765b8',
+	  
+	  originalLanguage: 'en',
+
+	  destinationLanguages : 'fr,es,hi',
+
+	  styleOpt : { fullname: true , withname: true , is_dropdown: true , classF: "wg-flags flag-3" },
+	 });
+
+</script>
+</html>
+
+
+
+

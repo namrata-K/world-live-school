@@ -1,0 +1,316 @@
+
+<html>
+    <head>
+        <title>Flexbox Tutorial</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="styles.css"/>
+        <script>
+                function myFunction() {
+                  var x = document.getElementById("myTopnav");
+                     if (x.className === "topnav") {
+                       x.className += " responsive";
+                        } 
+                     else {
+                        x.className = "topnav";
+                        }
+                    }
+        </script>
+        <style type="text/css">
+        	* {
+				    box-sizing: border-box;
+				    margin: 0;
+				    padding: 0;
+			}
+
+			body {
+			    overflow-y: hidden;
+			}
+
+			a {
+			    color: aliceblue;
+			    text-decoration: none;
+			}
+
+			ul {
+			    list-style-type: none;
+			}
+
+
+
+			@media only screen and (max-width: 600px) {
+			    .container {
+			        flex: column wrap;
+			        justify-content: space-around;
+			    }
+			    .container__nav-icon {
+			        font-size: 22px;
+			    }
+			    .container__sidebar-nav {
+			        flex-flow: row wrap;
+			        justify-content: space-around;
+			        align-content: stretch;
+			        padding: 0;
+			    }
+			    
+			    .container__nav-link {
+			        padding: 0;
+			    }
+			    .container__sidebar-nav:hover .container__nav-link-name {
+			        visibility: hidden;
+			        opacity: 0;
+			    }
+			    
+			}
+
+			.topnav {
+			  overflow: hidden;
+			  background-color: #333;
+			}
+
+			.topnav a {
+			  float: left;
+			  width: 20%;
+			  display: block;
+			  color: #f2f2f2;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			  font-size: 17px;
+			}
+
+			.topnav a:hover {
+			  background-color: #ddd;
+			  color: black;
+			}
+
+			.active {
+			  background-color: #F7819F;
+			  color: white;
+			}
+
+			.topnav .icon {
+			  display: none;
+			}
+
+			@media screen and (max-width: 600px) {
+			  .topnav a:not(:first-child) {display: none;}
+			  .topnav a.icon {
+			    float: right;
+			    display: block;
+			  }
+			}
+
+.img{
+	size: 5%;
+}
+			@media screen and (max-width: 600px) {
+			  .topnav.responsive {position: relative;}
+			  .topnav.responsive .icon {
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+			  }
+			  .topnav.responsive a {
+			    float: left;
+			    display: block;
+			    text-align: left;
+			  }
+			}
+
+
+			.wrap-whole{
+			  display:flex;
+			  flex-flow:row nowrap;
+			  justify-content:space-between;
+			  height:100vh;
+			}
+
+			.main-header {
+			    background-color: #A9CCE3;
+	            padding: 10px;
+	            box-shadow: 1px 2px 3px #ccc;
+	            color: white;
+	            display: flex;
+	            flex-flow: row nowrap;
+			}
+
+			.main-header-content {
+			    flex: 1 1 auto;
+			}
+
+			.topnav-container {
+	            padding: 10px;
+	            box-shadow: 1px 2px 3px #ccc;
+	            color: white;
+	            display: flex;
+	            flex-flow: row nowrap;
+	            width: 100%;
+			}
+
+			.vertical-nav-bar {
+			    display: flex;
+			    flex: 0 0 250px;
+			    flex-flow: column nowrap;
+			    text-align: center;
+			    z-index: 30;
+			    background: #061e2a;
+			    background: linear-gradient(to right,#fefefe, 99%, #8c8c8d);
+			    padding: 1rem 0 0 0;
+			    justify-content: flex-start;
+			}
+
+			.menu-container {
+			    display: flex;
+			    flex-flow: column wrap;
+			    justify-content: space-between;
+			}
+			.main-nav-link {
+			    transition: opacity .2s, visibility .2s;
+			    flex: 1 1 auto;
+			    align-self: center;
+			    display: flex;
+			    position: relative;
+			}
+			.main-nav-link a {
+			    font-family: "Whitney Cond A", "Whitney Cond B", "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+			    font-weight: 500;
+			    font-size: 0.66rem;
+			    letter-spacing: 0.04rem;
+			    color: #03A9F4;
+			    padding: 0.75rem 0.5rem;
+			    text-transform: uppercase;
+			    
+			}
+
+			.main-nav-icon {
+			    font-size: 50px;
+			    padding: 5px;
+			}
+
+
+			.vertical-nav-bar:hover .main-nav-link {
+			    color: yellow;
+			}
+
+			.container__main {
+			    flex: 1 1 600px;
+			    overflow-y: auto;
+			}
+
+			.container__header {
+			    text-align: center;
+			    font-size: 30px;
+			}
+
+			.container__content {
+			    margin: 30px 20px 10px 20px;
+			}
+
+			p {
+			    font-size: 24px;
+			    line-height: 1.4;
+			    margin-bottom: 20px;
+			}
+			.wrap {
+width: 80%;
+}
+
+ 
+   
+}
+h3{
+	width: 33%;
+	height: 20px;
+	color: black;
+	font-size: 26px;
+	margin-left: 40%;
+	margin-top: 2%;
+	 text-shadow: 5px 2px grey;
+}
+
+
+        </style>
+    </head>
+    <body>
+        <header class="main-header">
+                <div class="main-header-content">
+                    <div class="main-header-content">
+                    <table>
+                        <td width="25%">
+                        </td>
+                        <td width="75%">
+                          <a title="ecole"> 
+                            <img src="ecolelogo.png" alt="ecloe" align="left" height="40%" width="40%">
+                          </a>
+                        </td>
+                    </table>
+                </div>
+                </div>
+        </header>
+        <section class="wrap-whole">
+            
+            <section class="vertical-nav-bar">
+            	<table>
+                    <tr>
+                        <center>
+                            <div class="stud-deets" id = "studDeets">
+                                <span id="studName" class="stud-name">Kanishka</span>
+                                <br>
+                                <span id="studUname" class="stud-uname">@Kanishka24</span>
+                            </div>
+                            <div class="img-container" >
+                                 <img src="c.png"  style="width:200px;height:200px;border-radius: 100px">
+                            </div>
+                        </center>
+                    </tr>
+                    <tr>
+                        <td width="20%"></td>
+                        <td>
+                            <table width="100%" style="text-align: left;" >
+                                <tr>
+                                    <td>Age</td>
+                                    <td>20 years</td>
+                                </tr>
+                                <tr>
+                                    <td>Occupation  </td>
+                                    <td>professor</td>
+                                </tr>
+                                <tr>
+                                    <td>Qualification</td>
+                                    <td>xyz</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="20%"></td>
+                    </tr>
+                </table>
+                    
+            </section>
+            <section class="container__main">  
+           
+                <header class="container__header">
+                    
+                </header>
+                <section>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            	</section>
+            	 
+            </section>
+        </section>        
+    </body>
+<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+
+<script>
+	Weglot.setup({
+
+	  api_key: 'wg_02d8b91a1274c5774c7dc11ae2db765b8',
+	  
+	  originalLanguage: 'en',
+
+	  destinationLanguages : 'fr,es,hi',
+
+	  styleOpt : { fullname: true , withname: true , is_dropdown: true , classF: "wg-flags flag-3" },
+	 });
+
+</script>
+</html>
