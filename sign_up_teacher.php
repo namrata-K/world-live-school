@@ -30,8 +30,12 @@ function redirect_to($NewLocation){
         	else{
 				$Query="INSERT INTO signup_teacher(uname, password, name, dob, email, qual, occ) VALUES('$UserName', '$Password', '$Name', '$Dob', '$Email', '$Qualification', 'Occupation')";
     			$Execute=mysqli_query($Connection, $Query);
-				if($Execute){
-	   				redirect_to("login_teacher.html");
+				if($Execute){ ?>
+	   				<script LANGUAGE='JavaScript'>
+                     window.alert('Account created successfully. Please login to continue.');
+                     window.location.href='home.php';
+                     </script>
+                    <?php
             	}
             	else
             	{

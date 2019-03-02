@@ -10,15 +10,16 @@
          $DataRow = mysqli_fetch_assoc($Execute); 
          if($DataRow)
             $max_score = $DataRow['ms'];
-         $user_check_query = "SELECT id,name,score,donor FROM signup_student WHERE score='$max_score'  LIMIT 1"; 
+         $user_check_query = "SELECT oname,id,name,score,donor FROM signup_student WHERE score='$max_score'  LIMIT 1"; 
          $Execute = mysqli_query($Connection, $user_check_query); 
          $DataRow = mysqli_fetch_assoc($Execute);
-         if($DataRow['donor'] != 1)  break;
+         if($DataRow['donor']!=1 && $DataRow['oname']!="NA")  break;
       } 
       if($DataRow){
        $name= $DataRow['name'];
        $score = $DataRow['score'];
        $id = $DataRow['id'];
+       $oname = $DataRow['oname'];
        $_SESSION["child_name"]=$name;
     $_SESSION["child_id"]=$id;
   }
@@ -54,6 +55,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
+
   body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
@@ -152,6 +154,7 @@
           You are sponsoring the following child's education. You'll be notified of his/her progress via email.<br>
           CHILD'S NAME: <?php echo $name; ?><br>
           ECOLE SCORE : <?php echo $score; ?><br>
+          ORPHANAGE NAME : <?php echo $oname; ?><br>
          <form action="donate_child.php" method="post">
           <div class="form-group">
               <label for="name" style="color: black;">Name</label>
@@ -177,8 +180,6 @@
 <div class="modal fade" id="myModal2">
     <div class="modal-dialog">
       <div class="modal-content">
-      
-       
         <!-- Modal body -->
         <div class="modal-body" style="color: black; ">
          <form action="donate_us.php" method="post">
@@ -200,6 +201,150 @@
         </form>
         </div>
         
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="loginModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal body -->
+        <div class="modal-body" style="color: black; ">
+          <button type="button" class="btn btn-danger" name="sponsorChild" data-dismiss="modal" data-toggle="modal" data-target="#loginStudent">Student</button>
+         <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#loginTeacher"> Teacher </button> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="loginStudent">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal body -->
+        <div class="modal-body" style="color: black; ">
+         <form action="login_student.php" method="post">
+          <div class="form-group">
+              <label for="text" style="color: black;">Username</label>
+              <input type="text" class="form-control" name="uname" id="uname" aria-describedby="name" placeholder="Enter your username">
+          </div>
+           <div class="form-group">
+              <label for="text" style="color: black;">Password</label>
+              <input type="text" class="form-control" name="psw" id="psw" aria-describedby="name" placeholder="Enter your Password ">
+          </div>
+          <div>
+            <label for="text" style="color: : black;">Don't have an account? </label>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#signupStudent"> SignUp Now </button>
+          </div>
+        </div>
+        <div class="modal-footer">
+        <button type="submit" class="btn btn-danger">Login</button> 
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="signupStudent">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal body -->
+        <div class="modal-body" style="color: black; ">
+         <form action="sign_up_student.php" method="post">
+          <div class="form-group">
+              <label for="text" style="color: black;">Name</label>
+              <input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+              <label for="date" style="color: black;">Date of birth</label>
+              <input type="date" class="form-control" name="dob" id="dob" aria-describedby="name" placeholder="Enter your date of birth">
+          </div>
+          <div class="form-group">
+              <label for="text" style="color: black;">Orphanage name</label>
+              <input type="text" class="form-control" name="oname" id="oname" aria-describedby="name" placeholder="Enter your Orphanage name(Write NA if not applicable)">
+          </div>
+          <div class="form-group">
+              <label for="text" style="color: black;">Username</label>
+              <input type="text" class="form-control" name="uname" id="uname" aria-describedby="name" placeholder="Enter your username">
+          </div>
+           <div class="form-group">
+              <label for="text" style="color: black;">Password</label>
+              <input type="text" class="form-control" name="psw" id="psw" aria-describedby="name" placeholder="Enter your Password ">
+          </div>
+        </div>
+        <div class="modal-footer">
+        <button type="submit" class="btn btn-danger" name="submit">Sign Up</button> 
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="loginTeacher">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal body -->
+        <div class="modal-body" style="color: black; ">
+         <form action="login_teacher.php" method="post">
+          <div class="form-group">
+              <label for="text" style="color: black;">Username</label>
+              <input type="text" class="form-control" name="uname" id="uname" aria-describedby="name" placeholder="Enter your username">
+          </div>
+           <div class="form-group">
+              <label for="text" style="color: black;">Password</label>
+              <input type="text" class="form-control" name="psw" id="psw" aria-describedby="name" placeholder="Enter your Password ">
+          </div>
+          <div>
+            <label for="text" style="color: : black;">Don't have an account? </label>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#signupTeacher"> SignUp Now </button>
+          </div>
+        </div>
+        <div class="modal-footer">
+        <button type="submit" class="btn btn-danger">Login</button> 
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="signupTeacher" style="height: 100%;overflow-y: auto;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal body -->
+        <div class="modal-body" style="color: black; ">
+         <form action="sign_up_teacher.php" method="post">
+          <div class="form-group">
+              <label for="text" style="color: black;">Name</label>
+              <input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+              <label for="date" style="color: black;">Date of birth</label>
+              <input type="date" class="form-control" name="dob" id="dob" aria-describedby="name" placeholder="Enter your date of birth">
+          </div>
+          <div class="form-group">
+              <label for="email" style="color: black;">Email</label>
+              <input type="email" class="form-control" name="email" id="email" aria-describedby="name" placeholder="Enter your E-mail">
+          </div>
+          <div class="form-group">
+              <label for="text" style="color: black;">Qualification</label>
+              <input type="text" class="form-control" name="qual" id="qual" aria-describedby="name" placeholder="Enter your Qualification">
+          </div>
+          <div class="form-group">
+              <label for="text" style="color: black;">Occupation</label>
+              <input type="text" class="form-control" name="occ" id="occ" aria-describedby="name" placeholder="Enter your Occupation">
+          </div>
+          <div class="form-group">
+              <label for="text" style="color: black;">Username</label>
+              <input type="text" class="form-control" name="uname" id="uname" aria-describedby="name" placeholder="Enter your username">
+          </div>
+           <div class="form-group">
+              <label for="text" style="color: black;">Password</label>
+              <input type="text" class="form-control" name="psw" id="psw" aria-describedby="name" placeholder="Enter your Password ">
+          </div>
+        </div>
+        <div class="modal-footer">
+        <button type="submit" class="btn btn-danger" name="submit">Sign Up</button> 
+        </form>
+        </div>
       </div>
     </div>
   </div>
@@ -227,7 +372,7 @@
                        
                         <li><a href="#contact">Contact</a></li>
                        
-                       <button class="b b1" onclick="location.href = 'login_main.html';">Login</button>
+                      <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#loginModal" >Login</button> 
 
                     </ul>
 
@@ -236,6 +381,7 @@
                 
   </div>
 </nav>
+
 
 <div class="overlay"></div>
 

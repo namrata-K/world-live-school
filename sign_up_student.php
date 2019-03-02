@@ -15,11 +15,12 @@ function redirect_to($NewLocation){
 			$Password=$_POST["psw"];
 			$Dob=$_POST["dob"];
 			$Name=$_POST["name"];
+			$Oname = $_POST["oname"];
 			$house_no = rand(1,4);
 			if($house_no == 1)
 				$House = 'Kaveri';
 			else if($house_no==2)
-					$hHuse = 'Krishna';
+					$House = 'Krishna';
 			else if($house_no==3)
 					$House = 'Yamuna';
 			else if($house_no==4)
@@ -35,10 +36,14 @@ function redirect_to($NewLocation){
 <?php
         	}
         	else{
-				$Query="INSERT INTO signup_student(uname, password, name, dob, house) VALUES('$UserName', '$Password', '$Name', '$Dob', '$House')";
+				$Query="INSERT INTO signup_student(uname, password, name, dob, house, oname) VALUES('$UserName', '$Password', '$Name', '$Dob', '$House', '$Oname')";
     			$Execute=mysqli_query($Connection, $Query);
-				if($Execute){
-	   				redirect_to("login_student.html");
+				if($Execute){ ?>
+	   				<script LANGUAGE='JavaScript'>
+                     window.alert('Account created successfully. Please login to continue.');
+                     window.location.href='home.php';
+                     </script>
+                    <?php
             	}
             	else
             	{

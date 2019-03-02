@@ -404,24 +404,44 @@
                 <input type="file" class="form-control" name ="file" id="file" aria-describedby="name" placeholder="Upload file here">
             </div>
             <div class="form-group">
+                <label for="tag" style="color: black;">Question 1</label>
+                <input type="text" class="form-control" name="ques1" id="ques1" aria-describedby="name" placeholder="Enter question 1 for the test">
+            </div>
+            <div class="form-group">
+                <label for="tag" style="color: black;">Option 1</label>
+                <input type="text" class="form-control" id="opt11" name="opt11" aria-describedby="name" placeholder="Enter option 1">
+            </div>
+            <div class="form-group">
+                <label for="tag" style="color: black;">Option 2</label>
+                <input type="text" class="form-control" id="opt12" name="opt12" aria-describedby="name" placeholder="Enter option 2">
+            </div>
+            <div class="form-group">
+                <label for="tag" style="color: black;">Option 3</label>
+                <input type="text" class="form-control" id="opt13" name="opt13" aria-describedby="name" placeholder="Enter option 3">
+            </div>
+            <div class="form-group">
+                <label for="tag" style="color: black;">Correct Answer</label>
+                <input type="text" class="form-control" id="correct1" name="correct1" aria-describedby="name" placeholder="Enter the correct answer">
+            </div>
+            <div class="form-group">
                 <label for="tag" style="color: black;">Tag 1</label>
-                <input type="text" class="form-control" id="tag1" aria-describedby="name" placeholder="Enter tag 1">
+                <input type="text" class="form-control" id="tag1" name="tag1" aria-describedby="name" placeholder="Enter tag 1">
             </div>
             <div class="form-group">
                 <label for="tag" style="color: black;">Tag 2</label>
-                <input type="text" class="form-control" id="tag2" aria-describedby="name" placeholder="Enter tag 2">
+                <input type="text" class="form-control" id="tag2" name="tag2" aria-describedby="name" placeholder="Enter tag 2">
             </div>
             <div class="form-group">
                 <label for="tag" style="color: black;">Tag 3</label>
-                <input type="text" class="form-control" id="tag3" aria-describedby="name" placeholder="Enter tag 3">
+                <input type="text" class="form-control" id="tag3" name="tag3" aria-describedby="name" placeholder="Enter tag 3">
             </div>
             <div class="form-group">
                 <label for="tag" style="color: black;">Tag 4</label>
-                <input type="text" class="form-control" id="tag4" aria-describedby="name" placeholder="Enter tag 4">
+                <input type="text" class="form-control" id="tag4" name="tag4" aria-describedby="name" placeholder="Enter tag 4">
             </div>
             <div class="form-group">
                 <label for="tag" style="color: black;">Tag 5</label>
-                <input type="text" class="form-control" id="tag5" aria-describedby="name" placeholder="Enter tag 5">
+                <input type="text" class="form-control" id="tag5" name="tag5" aria-describedby="name" placeholder="Enter tag 5">
             </div>
 
         </div>
