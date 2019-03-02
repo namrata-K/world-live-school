@@ -1,4 +1,4 @@
-﻿<?php
+<?php
   $Connection = mysqli_connect('localhost', 'root', '');
   $Selected = mysqli_select_db($Connection, 'live_school');
   session_start();
@@ -10,16 +10,15 @@
          $DataRow = mysqli_fetch_assoc($Execute); 
          if($DataRow)
             $max_score = $DataRow['ms'];
-         $user_check_query = "SELECT oname,id,name,score,donor FROM signup_student WHERE score='$max_score'  LIMIT 1"; 
+         $user_check_query = "SELECT id,name,score,donor FROM signup_student WHERE score='$max_score'  LIMIT 1"; 
          $Execute = mysqli_query($Connection, $user_check_query); 
          $DataRow = mysqli_fetch_assoc($Execute);
-         if($DataRow['donor']!=1 && $DataRow['oname']!="NA")  break;
+         if($DataRow['donor'] != 1)  break;
       } 
       if($DataRow){
        $name= $DataRow['name'];
        $score = $DataRow['score'];
        $id = $DataRow['id'];
-       $oname = $DataRow['oname'];
        $_SESSION["child_name"]=$name;
     $_SESSION["child_id"]=$id;
   }
@@ -55,7 +54,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
-
   body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
@@ -154,7 +152,6 @@
           You are sponsoring the following child's education. You'll be notified of his/her progress via email.<br>
           CHILD'S NAME: <?php echo $name; ?><br>
           ECOLE SCORE : <?php echo $score; ?><br>
-          ORPHANAGE NAME : <?php echo $oname; ?><br>
          <form action="donate_child.php" method="post">
           <div class="form-group">
               <label for="name" style="color: black;">Name</label>
@@ -180,6 +177,8 @@
 <div class="modal fade" id="myModal2">
     <div class="modal-dialog">
       <div class="modal-content">
+      
+       
         <!-- Modal body -->
         <div class="modal-body" style="color: black; ">
          <form action="donate_us.php" method="post">
@@ -205,159 +204,14 @@
     </div>
   </div>
 
-<div class="modal fade" id="loginModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- Modal body -->
-        <div class="modal-body" style="color: black; ">
-          <button type="button" class="btn btn-danger" name="sponsorChild" data-dismiss="modal" data-toggle="modal" data-target="#loginStudent">Student</button>
-         <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#loginTeacher"> Teacher </button> 
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="modal fade" id="loginStudent">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- Modal body -->
-        <div class="modal-body" style="color: black; ">
-         <form action="login_student.php" method="post">
-          <div class="form-group">
-              <label for="text" style="color: black;">Username</label>
-              <input type="text" class="form-control" name="uname" id="uname" aria-describedby="name" placeholder="Enter your username">
-          </div>
-           <div class="form-group">
-              <label for="text" style="color: black;">Password</label>
-              <input type="text" class="form-control" name="psw" id="psw" aria-describedby="name" placeholder="Enter your Password ">
-          </div>
-          <div>
-            <label for="text" style="color: : black;">Don't have an account? </label>
-            <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#signupStudent"> SignUp Now </button>
-          </div>
-        </div>
-        <div class="modal-footer">
-        <button type="submit" class="btn btn-danger">Login</button> 
-        </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="modal fade" id="signupStudent">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- Modal body -->
-        <div class="modal-body" style="color: black; ">
-         <form action="sign_up_student.php" method="post">
-          <div class="form-group">
-              <label for="text" style="color: black;">Name</label>
-              <input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter your name">
-          </div>
-          <div class="form-group">
-              <label for="date" style="color: black;">Date of birth</label>
-              <input type="date" class="form-control" name="dob" id="dob" aria-describedby="name" placeholder="Enter your date of birth">
-          </div>
-          <div class="form-group">
-              <label for="text" style="color: black;">Orphanage name</label>
-              <input type="text" class="form-control" name="oname" id="oname" aria-describedby="name" placeholder="Enter your Orphanage name(Write NA if not applicable)">
-          </div>
-          <div class="form-group">
-              <label for="text" style="color: black;">Username</label>
-              <input type="text" class="form-control" name="uname" id="uname" aria-describedby="name" placeholder="Enter your username">
-          </div>
-           <div class="form-group">
-              <label for="text" style="color: black;">Password</label>
-              <input type="text" class="form-control" name="psw" id="psw" aria-describedby="name" placeholder="Enter your Password ">
-          </div>
-        </div>
-        <div class="modal-footer">
-        <button type="submit" class="btn btn-danger" name="submit">Sign Up</button> 
-        </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="modal fade" id="loginTeacher">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- Modal body -->
-        <div class="modal-body" style="color: black; ">
-         <form action="login_teacher.php" method="post">
-          <div class="form-group">
-              <label for="text" style="color: black;">Username</label>
-              <input type="text" class="form-control" name="uname" id="uname" aria-describedby="name" placeholder="Enter your username">
-          </div>
-           <div class="form-group">
-              <label for="text" style="color: black;">Password</label>
-              <input type="text" class="form-control" name="psw" id="psw" aria-describedby="name" placeholder="Enter your Password ">
-          </div>
-          <div>
-            <label for="text" style="color: : black;">Don't have an account? </label>
-            <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#signupTeacher"> SignUp Now </button>
-          </div>
-        </div>
-        <div class="modal-footer">
-        <button type="submit" class="btn btn-danger">Login</button> 
-        </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="modal fade" id="signupTeacher" style="height: 100%;overflow-y: auto;">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- Modal body -->
-        <div class="modal-body" style="color: black; ">
-         <form action="sign_up_teacher.php" method="post">
-          <div class="form-group">
-              <label for="text" style="color: black;">Name</label>
-              <input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter your name">
-          </div>
-          <div class="form-group">
-              <label for="date" style="color: black;">Date of birth</label>
-              <input type="date" class="form-control" name="dob" id="dob" aria-describedby="name" placeholder="Enter your date of birth">
-          </div>
-          <div class="form-group">
-              <label for="email" style="color: black;">Email</label>
-              <input type="email" class="form-control" name="email" id="email" aria-describedby="name" placeholder="Enter your E-mail">
-          </div>
-          <div class="form-group">
-              <label for="text" style="color: black;">Qualification</label>
-              <input type="text" class="form-control" name="qual" id="qual" aria-describedby="name" placeholder="Enter your Qualification">
-          </div>
-          <div class="form-group">
-              <label for="text" style="color: black;">Occupation</label>
-              <input type="text" class="form-control" name="occ" id="occ" aria-describedby="name" placeholder="Enter your Occupation">
-          </div>
-          <div class="form-group">
-              <label for="text" style="color: black;">Username</label>
-              <input type="text" class="form-control" name="uname" id="uname" aria-describedby="name" placeholder="Enter your username">
-          </div>
-           <div class="form-group">
-              <label for="text" style="color: black;">Password</label>
-              <input type="text" class="form-control" name="psw" id="psw" aria-describedby="name" placeholder="Enter your Password ">
-          </div>
-        </div>
-        <div class="modal-footer">
-        <button type="submit" class="btn btn-danger" name="submit">Sign Up</button> 
-        </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
     <body class="homepage">
-<div class="overlay" style="width: 100%;"></div>
+<div class="overlay"></div>
 
-<div class="outer-wrapper" style="width: 100%;">
-<div class="page-wrapper" style="width: 100%;">
+<div class="outer-wrapper">
+<div class="page-wrapper">
 
     <header class="navigation" id="top">
-        <div class="container" style="width: 100%;">
-           
+        <div class="container">
             <!--/.secondary-nav-->
             <div class="main-nav">
                 <div class="brand"><img src="ecolelogo.png" alt="Ecole" height="50%" width="50%"></a></div><!--/.brand-->
@@ -366,13 +220,12 @@
 
                     <ul>
 
-                        <li><a  href="#aboutus">About Us</a></li>
+                        <li><a href="#aboutus">About Us</a></li>
                         <li><a href="#donate">Donate</a></li>
                         <li><a href="#services">Our Services</a></li>
-                       
                         <li><a href="#contact">Contact</a></li>
                        
-                      <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#loginModal" >Login</button> 
+                       <button type="button"  style="background-color: #FF8000;" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Login</button>
 
                     </ul>
 
@@ -381,41 +234,51 @@
                 
   </div>
 </nav>
-
-
+<div class="modal " id="loginModal" style="height: 100%;overflow-y: auto;">
+    <div class="modal-dialog" >
+      <div class="modal-content" >
+        <!-- Modal body -->
+        <div class="modal-body">
+          <h1 style="color: black;">hey</h1>
+        </div> 
+      </div>
+    </div>
+  </div>
+<!-- end of modal -->
 <div class="overlay"></div>
 
 <div class="outer-wrapper">
 <div class="page-wrapper">
-<div class="hero-slider" style="min-height: 100px">
+
+    <div class="hero-slider" style="height: 100px">
         <div class="rev-slider">
             <ul>
                <li>
-                   <img src="imgfr2.jpg" alt="">
+                   <img src="front.jpg" alt="">
                    <div class="tp-caption"
                         data-x="left" data-hoffset="0"
                         data-y="top" data-voffset="150"
                         data-transform_idle="o:1;"
-                        data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
+                        data-transform_in="x:50px;opacity:0;s:500;e:Power3.easeInOut;"
                         data-start="500">
                    </div>
                    <div class="tp-caption"
                         data-x="left" data-hoffset="0"
                         data-y="top" data-voffset="210"
                         data-transform_idle="o:1;"
-                        data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                        data-start="600">
+                        data-transform_in="x:50px;opacity:0;s:500;e:Power3.easeInOut;"
+                        data-start="600"><h1><br></h1>
                    </div>
                    <div class="tp-caption"
                         data-x="left" data-hoffset="0"
                         data-y="top" data-voffset="410"
                         data-transform_idle="o:1;"
-                        data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
+                        data-transform_in="x:50px;opacity:0;s:500;e:Power3.easeInOut;"
                         data-start="700">
                    </div>
                </li>
                 <li>
-                    <img src="imgfr3.jpg" alt="">
+                    <img src="front1.jpg" alt="">
                     <div class="tp-caption"
                          data-x="left" data-hoffset="0"
                          data-y="top" data-voffset="150"
@@ -428,7 +291,7 @@
                          data-y="top" data-voffset="210"
                          data-transform_idle="o:1;"
                          data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                         data-start="600">
+                         data-start="600"><h1 class="text-color-white">The Era<br>Of Digital Education</h1>
                     </div>
                     <div class="tp-caption"
                          data-x="left" data-hoffset="0"
@@ -439,7 +302,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="imgfr4.jpg" alt="">
+                    <img src="front2.jpg" alt="">
                     <div class="tp-caption"
                          data-x="left" data-hoffset="0"
                          data-y="top" data-voffset="150"
@@ -452,7 +315,7 @@
                          data-y="top" data-voffset="210"
                          data-transform_idle="o:1;"
                          data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                         data-start="600">
+                         data-start="600"><h1 class="text-color-white">Digital Education<br>Spreading Smiles Worldwide</h1>
                     </div>
                     <div class="tp-caption"
                          data-x="left" data-hoffset="0"
@@ -465,6 +328,7 @@
             </ul>
         </div>
     </div>
+    <!--/.hero-slider-->
 </div>
 </div>
 
@@ -481,8 +345,8 @@
 <div class="container-fluid bg-3 text-center">    
   <h3 class="margin" size="2px">SUCCESS STORIES</h3><br>
   <div class="row">
-    <div class="col-sm-4" style="border-top: 20%">
-      <img src="author.jpg" height="20%" ; width="40%">
+    <div class="col-sm-4">
+      <img src="orphan.jpg" height="50%" ; width="50%">
       <p align="left">Ms Savita Gupta</p>
 <p align="left">Shalimar Bagh, Delhi</p>
 <p align="left">Housewife</p>
@@ -492,7 +356,7 @@
       
     </div>
     <div class="col-sm-4"> 
-      <img src="story.jpg" height="50%" ; width="50%">
+      <img src="orphan.jpg" height="50%" ; width="50%">
 
       <p align="left">Prof. Sunil Sharma</p> 
 <p align="left">Kashmere Gate, Delhi</p>
@@ -543,19 +407,19 @@
     <div class="col-sm-4">
     <img src="class.png" height="20%" width=20%>
     <B align="center"><font size="5">Virtual Classroom</B> 
-<p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all materials. 
+<p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all marterials. 
 </p>
   </div>
   <div class="col-sm-4">
     <img src="tts.jpg" height="20%" width=20%>
     <B align="center"><font size="5">Text to Speech</B> 
-<p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all materials. 
+<p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all marterials. 
 </p>
   </div>
 <div class="col-sm-4">
     <img src="people.jpg" height="20%" width=20%>
     <B align="center"><font size="5">Network Building</B> 
-<p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all materials. 
+<p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all marterials. 
 </p>
   </div>
 
@@ -571,8 +435,9 @@
     <img src="twitter.png" height=3% width=3%>
     <img src="insta.png" height=3% width=3%>
     <img src="f.png" height=3% width=3%>
-     <h3 class="margin" style="margin-left: 87%;color:  #2f2f2f">Language</h3>
   </div>
+
+
   
 </footer>
 

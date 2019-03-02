@@ -9,7 +9,6 @@ function redirect_to($NewLocation){
  	$Connection = mysqli_connect('localhost', 'root', '');
  	$Selected = mysqli_select_db($Connection, 'live_school');
  	session_start();
-	if(isset($_POST["submit"])){
 		if(!empty($_POST["uname"]) && !empty($_POST["psw"])){
 			$UserName=$_POST["uname"];
 			$Password=$_POST["psw"];
@@ -30,14 +29,6 @@ function redirect_to($NewLocation){
 	        	</script>
 <?php
           	}
-		}
-		else{ 
-?>
-    			<script>
-	        	alert("Please enter all fields");
-	        	</script>
-<?php
-			}
 	} 
 ?>
 
