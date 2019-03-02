@@ -493,25 +493,6 @@
                             </li>
                         </ul>
                     </form>
-                    <form action="showcourses.php" method="post">
-                        <ul class="collapse list-unstyled" id="lv2menu" >
-                            <li >
-                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="hindi2">Hindi</button>
-                            </li>
-                            <li >
-                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="english2">English</button>
-                            </li>
-                            <li >
-                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="maths2">Mathematics</button>
-                            </li>
-                            <li >
-                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="science2">Science</button>
-                            </li>
-                            <li >
-                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="sst2">Social Studies</button>
-                            </li>
-                        </ul>
-                    </form>
                 </li>
 
                 <li class="active">
