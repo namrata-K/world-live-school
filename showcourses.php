@@ -471,19 +471,72 @@
                 <i style="background-color: #FF8000; border-color: #FF8000" class="fas fa-arrow-left"></i>
             </div>
 
-            <div style="background-color: #FF8000; border-color: #FF8000" class="sidebar-header">
-                <h4>Hi <?php echo $name; ?>!</h4>
-            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#lv1menu" data-toggle="collapse" aria-expanded="false" style="background-color: #FF8000">Level 1</a>
+                    <form action="showcourses.php" method="post">
+                        <ul class="collapse list-unstyled" id="lv1menu" >
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="hindi1">Hindi</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="english1">English</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="maths1">Mathematics</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="science1">Science</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="sst1">Social Studies</button>
+                            </li>
+                        </ul>
+                    </form>
+                    <form action="showcourses.php" method="post">
+                        <ul class="collapse list-unstyled" id="lv2menu" >
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="hindi2">Hindi</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="english2">English</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="maths2">Mathematics</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="science2">Science</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="sst2">Social Studies</button>
+                            </li>
+                        </ul>
+                    </form>
+                </li>
 
-            <center>
-              <img class="stud-icon img-responsive" src="a.png">
-            </center>
-            <div>
-                <center><i><p style="color: black;"><?php echo $uname; ?></p></center></i>
-            </div>
-             <div>
-                <center><p style="color: black;"><?php echo $dob; ?></p></center>
-            </div>
+                <li class="active">
+                    <a href="#lv2menu" data-toggle="collapse" aria-expanded="false" style="background-color: #FF8000">Level 2</a>
+                    <form action="showcourses.php" method="post">
+                        <ul class="collapse list-unstyled" id="lv2menu" style="background-color: #514f4f">
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="hindi2">Hindi</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="english2">English</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="maths2">Mathematics</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="science2">Science</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="sst2">Social Studies</button>
+                            </li>
+                        </ul>
+                    </form>
+                </li>
+            </ul>
 
             
         </nav>
@@ -496,7 +549,7 @@
 
                     <button style="background-color: #FF8000; border-color: #FF8000" type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
-                        <span>Student Profile</span>
+                        <span>Select Level</span>
                     </button>
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
