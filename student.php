@@ -499,7 +499,7 @@
 
 
 			<div class="container-fluid">
-			  <h1 class="text-center mb-3">Bootstrap Multi-Card Carousel</h1>
+			  <h1 class="text-center mb-3">Recommended for you</h1>
 			  <div id="myCarousel" class="carousel slide" data-ride="carousel">
 			    <div class="carousel-inner row w-100 mx-auto">
 			      <div class="carousel-item col-md-4 active">

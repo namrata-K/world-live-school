@@ -1,0 +1,117 @@
+<!Doctype HTML>
+
+<html>
+    <head>
+        <title>Bad word filter</title>
+    
+    <style type="text/css">
+    	body
+{
+	background: #cbc3a6;
+	color: #37445D;
+	font: 15px/20px Verdana, Helvetica, Sans-Serif;
+}
+
+#container
+{
+	margin: 0 auto;
+	width: 550px;
+}
+
+textarea
+{
+	border: 2px solid #000;
+	display: block;
+	font: 14px Verdana, Arial, Helvetica;
+	margin: 0 0 15px 0;
+	overflow: auto;
+	padding: 5px;
+	resize: none;
+	width: 500px;
+}
+
+input[type="button"]
+{
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #000;
+	border-radius: 8px;
+	color: #000;
+	display: table;
+	font-size: 16px;
+	margin: 0 auto;
+	padding: 5px 8px;
+	width: 175px;
+}
+
+input[type="button"]:hover
+{
+	background-color: #666;
+	background-image: none;
+	color: #fff;
+	display: table;
+	font-size: 16px;
+}
+		</style>
+    </head>
+    <body>
+    	<h1>Bad Word Filter</h1>
+
+		<p>Disallows specific words to be sent in the comment area.</p>
+		<p>The bad words currently fed are mentioned below.</p>
+		
+		<div id="container">
+			<form name="form1">
+				<textarea rows="3" cols="40" name="text" placeholder="Enter one of the bad words above and then try submitting your comment." onClick="select_area()"></textarea>
+
+		<input type="button" value="Submit" onClick="validate_text();">
+			</form>
+
+			<script>
+
+var swear_words_arr=new Array("bloody","war","terror");
+
+var swear_alert_arr=new Array;
+var swear_alert_count=0;
+function reset_alert_count()
+{
+ swear_alert_count=0;
+}
+function validate_text()
+{
+ reset_alert_count();
+ var compare_text=document.form1.text.value;
+ for(var i=0; i<swear_words_arr.length; i++)
+ {
+  for(var j=0; j<(compare_text.length); j++)
+  {
+   if(swear_words_arr[i]==compare_text.substring(j,(j+swear_words_arr[i].length)).toLowerCase())
+   {
+    swear_alert_arr[swear_alert_count]=compare_text.substring(j,(j+swear_words_arr[i].length));
+    swear_alert_count++;
+   }
+  }
+ }
+ var alert_text="";
+ for(var k=1; k<=swear_alert_count; k++)
+ {
+  alert_text+="\n" + "(" + k + ")  " + swear_alert_arr[k-1];
+ }
+ if(swear_alert_count>0)
+ {
+  alert("The message will not be sent!!!\nThe following illegal words were found:\n_______________________________\n" + alert_text + "\n_______________________________");
+  document.form1.text.select();
+ }
+ else
+ {
+  document.form1.submit();
+ }
+}
+function select_area()
+{
+ document.form1.text.select();
+}
+window.onload=reset_alert_count;
+			</script>
+	</body>
+</html>

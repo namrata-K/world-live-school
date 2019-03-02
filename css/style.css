@@ -1,53 +1,64 @@
-*{
-	margin:0;
-	padding:0;
+body {
+    background-color: #191919;
+    padding: 10px 0;
 }
-body{
-	font-family:"Trebuchet MS", "Myriad Pro", Arial, sans-serif;
-	font-size:14px;
-	background:#f4f4f4 url(../images/webtreats-paper-pattern-6-grey.jpg) repeat top left;
-	color:#333;
-	text-shadow:1px 1px 1px #fff;
+.add-todo {
+    background-color: #FFFFF7;
+    border-radius: 5px;
+    padding: 1em 5em;
 }
-h1{
-	font-size:56px;
+.add-par {
+    font-size: 130%;
 }
-h2{
-	font-size:26px;
-	padding:10px 0px 10px 0px;
-	margin-top:20px;
+.input-box {
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
 }
-a{
-	color:#777;
+.post {
+    cursor: pointer;
 }
-a:hover{
-	color:#222;
+.output {
+    background-color: #FFFFF7;
+    border-radius: 5px;
+    margin-top: 1em;
 }
-p{
-	padding:5px 0px;
+.todo {
+    padding: 2em 2em 1em 2em;
+    border-bottom: 1px solid #cfcfcf;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
-.wrapper{
-	width:960px;
-	margin:20px auto;
+.date {
+    font-weight: bold;
+    
+    margin-top: 1em;
 }
-.box{
-	width:49%;
+.article-content {
+    font-size: 1.5em;
 }
-.left{
-	float:left;
+.glyph {
+    font-size: 2em;
 }
-.right{
-	float:right;
+
+/* MEDIA */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 970px;
+    }
 }
-.clear{
-	clear:both;
+@media (max-width: 970px) {
+    .article-content {
+        font-size: 1.4em;
+    }
+    .glyph {
+        font-size: 1.6em;
+    }
 }
-.footer{
-	text-align:center;
-	width:100%;
-	color:#fff;
-	padding:20px 0px;
-	clear:both;
-	background:#000;
-	margin-top:30px;
+@media (max-width: 550px) {
+    .add-todo {
+        padding: 2em 1em 1em 1em;
+    }
 }
