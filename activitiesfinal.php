@@ -31,12 +31,15 @@
     <link rel="stylesheet" href="style3.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
      <script src='Winwheel.js'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.0/TweenMax.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 
     <style type="text/css">
@@ -249,16 +252,25 @@
 #prizePointer {
     position: relative;
     left: 370px;
-    top: -950px;
+    top: -750px;
     z-index: 999;
 }
 .btn-warning{
     position:absolute;
     left:350px;
-    top: 700px;
+    top: 650px;
     background-color:#FF8000 ;
+    border-radius: 50%;
 }
- 
+.btn-primary {
+    position:absolute;
+    left:1050px;
+    top: 850px;
+    background-color:#FF8000 ;
+    border-radius: 50%;
+}
+
+
     </style>
 
 </head>
@@ -326,6 +338,22 @@
                     </div>
                 </div>
             </nav>
+            <center>
+                <div class="container">
+                  <div class="row">
+                    <div class="col" style="height: 300px; padding: 20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: lightblue" ><font size="6"><B>GANGA</B></font></div>
+                    <div class="col" style="height: 300px; padding: 20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: red"><font size="6"><B>YAMUNA</B></font></div>
+                    <div class="w-100"></div>
+                    <div class="col" style="height: 300px; padding:20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: yellow"><font size="6"><B>KAVERI</B></font></div>
+                    <div class="col" style="height: 300px; padding:20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: green"><font size="6"><B>KRISHNA</B></font></div>
+                  </div>
+                </div>
+            </center>
+            <div class="container">
+                  <button style="float: right" type="button" class="btn btn-primary">Warning</button>
+                  </div>
+
+
              <div id="canvasContainer">
         <canvas id='canvas' width='880' height='800'>
             Canvas not supported, use another browser.
@@ -346,10 +374,6 @@
       else window.onload = blink;
     </script>
    
-    <B><blink style="color: BLACK; ">TRY YOUR LUCK TODAY! </blink></B>
-
-       
-        <img src="clown.gif"/>
         <img id="prizePointer" src="pointer.png" height="20%" width="50%" alt="V" />
         
         <script>
@@ -358,8 +382,8 @@
         'numSegments' : 10,
         'fillStyle'   : '#e7706f',
         'lineWidth'   : 3,
-        'outerRadius' : 280,
-        'innerRadius' : 80, 
+        'outerRadius' : 200,
+        'innerRadius' : 50, 
 
         'segments'    :
         [

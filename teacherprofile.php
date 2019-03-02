@@ -582,13 +582,35 @@
     </div>
   </div>
 <!-- end of modal -->
+        <center><h2><B> GUIDELINES FOR TEACHERS </h2></center></B>
+    <h1><font size="5" color="orange"> For connect </font></h1>
 
+      <p> You can connect with students via two means: 
+      <li> Video calling lets you talk to one student at a time: anytime, anwhere in the world for the course content you choose to upload.</li>
+      <li>Peer discussion where you can interact with a large number of students & teachers, discussing doubts, questions and requests publically.  </li></p>
+    <center><img src="Screenshot (6).png" height="30%" width="30%"/></center>
+
+     <h1><font size="5" color="orange"> For upload content </font></h1>
+     <p> You can upload content in either of the two ways:
+    <li> Upload random course: Where you upload any course of your choice based on your availabity, knowledge and interest, in any of the following form: images, vidoes, documents or write your own blog. </li>
+    <li>Upload a crash course: Based on the curriculum provided <a href="curriculum.pdf">(click here for curriculum)</a>, you can either continue uploading your course or start a new one.</li>
+    <p> DISCLAIMER: It is advised that you complete your current classroom course before moving on to the next one</p>
+    <center><img src="Screenshot (9).png" height="30%" width="30%"/></center>
+
+    <h1><font size="5" color="orange"> Additional Information</font></h1>
+    <li>Along with uplaoding content, you are supposed to upload a 5 question test based on that particular topic to score the students and keep a track of their understanding of the topic  </li>
+    <li> The content can be uploaded only in the following formats: images, vidoes, documents or blogs.</li>
+    <li> If you take the classroom course, you will get a periodic reminder on your registered email to upload the next series of content</li> 
 
 
         </div>
     </div>
 
+
     <div class="overlay"></div>
+
+
+  
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -618,6 +640,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>
