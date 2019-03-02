@@ -267,7 +267,7 @@
     left:1050px;
     top: 850px;
     background-color:#FF8000 ;
-    border-radius: 50%;
+    border-radius: 12px;
 }
 
 
@@ -341,11 +341,49 @@
             <center>
                 <div class="container">
                   <div class="row">
-                    <div class="col" style="height: 300px; padding: 20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: lightblue" ><font size="6"><B>GANGA</B></font></div>
-                    <div class="col" style="height: 300px; padding: 20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: red"><font size="6"><B>YAMUNA</B></font></div>
+                    <div class="col" style="height: 300px; padding: 20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: lightblue" ><font size="6"><B>GANGA</B></font>
+                        <p><font color=black>Sometimes we make things more complicated than they really are.
+
+Sometimes we focus on all the wrong things.
+
+Focus on what you can do, right now, where you are. 
+
+</font></p>
+<h1><p><font size=5px color=black align="right">HOUSE SCORE</font></h1></p></div>
+
+                    <div class="col" style="height: 300px; padding: 20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: red"><font size="6"><B>YAMUNA</B></font>               <p><font color=black>Sometimes we make things more complicated than they really are.
+
+Sometimes we focus on all the wrong things.
+
+Focus on what you can do, right now, where you are. 
+
+</font></p>
+<h1><p><font size=5px color=black align="right">HOUSE SCORE</font></h1></p></div>
                     <div class="w-100"></div>
-                    <div class="col" style="height: 300px; padding:20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: yellow"><font size="6"><B>KAVERI</B></font></div>
-                    <div class="col" style="height: 300px; padding:20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: green"><font size="6"><B>KRISHNA</B></font></div>
+                    <div class="col" style="height: 300px; padding:20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: yellow"><font size="6"><B>KAVERI</B></font>               <p><font color=black>Sometimes we make things more complicated than they really are.
+
+Sometimes we focus on all the wrong things.
+
+Focus on what you can do, right now, where you are. 
+
+</font></p>
+<h1><p><font size=5px color=black align="right">HOUSE SCORE</font></h1></p></div>
+                    <div class="col" style="height: 300px; padding:20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: green"><font size="6"><B>KRISHNA</B></font>               <p><font color=black>Sometimes we make things more complicated than they really are.
+
+Sometimes we focus on all the wrong things.
+
+Focus on what you can do, right now, where you are. 
+
+</font></p>
+
+    
+<font size=5px color=black align="right">
+    <table>
+    <tr>Total House Course</tr>
+    <tr>Gem Of The House</tr></font>
+</table>
+</font>
+</div>
                   </div>
                 </div>
             </center>
