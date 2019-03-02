@@ -328,9 +328,9 @@
       <div class="modal-content">       
         <!-- Modal body -->
         <div class="modal-body">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" name="urc" data-toggle="modal" data-target="#random_cmodal">Upload Random Course</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal" name="ucc" data-toggle="modal" data-target="#class_cmodal">Upload Classroom Course</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal" name="ucc" data-toggle="modal" data-target="#bmodal">Upload blog</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" name="urc" data-toggle="modal" data-target="#random_cmodal">Random Course</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" name="ucc" data-toggle="modal" data-target="#class_cmodal">Classroom Course</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" name="ucc" data-toggle="modal" data-target="#bmodal">Blog</button>
         </div>
       </div>
     </div>
