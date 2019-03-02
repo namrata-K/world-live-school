@@ -32,10 +32,17 @@ while($row = mysqli_fetch_array($result)){
 <head>
 	<title></title>
 </head>
-<body>
+<body> Answer the following questions
 	<div>
-		
 		<?php echo $question?>
+	</div>
+	<div>
+		<form action="answer.php">
+  			<input type="radio" name="answer" value="<?php echo $option1 ?>"> <?php echo $option1 ?><br>
+  			<input type="radio" name="answer" value="<?php echo $option2 ?>"> <?php echo $option2 ?><br>
+  			<input type="radio" name="answer" value="<?php echo $option3 ?>"> <?php echo $option3 ?><br>  
+  			<input type="submit" value="Submit">
+		</form>
 	</div>
 </body>
 </html>
