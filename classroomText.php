@@ -798,49 +798,50 @@ margin-top: 5%;
             </div>
 
             <ul class="list-unstyled components">
-
                 <li class="active">
                     <a href="#lv1menu" data-toggle="collapse" aria-expanded="false" style="background-color: #FF8000">Level 1</a>
-                    <ul class="collapse list-unstyled" id="lv1menu" >
-                        <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Hindi</button>
-                        </li>
-                        <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">English</button>
-                        </li>
-                        <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Mathematics</button>
-                        </li>
-                        <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Science</button>
-                        </li>
-                        <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Social Studies</button>
-                        </li>
-                        
-                        
-                    </ul>
+                    <form action="showcourses.php" method="post">
+                        <ul class="collapse list-unstyled" id="lv1menu" >
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="hindi1">Hindi</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="english1">English</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="maths1">Mathematics</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="science1">Science</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="sst1">Social Studies</button>
+                            </li>
+                        </ul>
+                    </form>
                 </li>
 
                 <li class="active">
                     <a href="#lv2menu" data-toggle="collapse" aria-expanded="false" style="background-color: #FF8000">Level 2</a>
-                    <ul class="collapse list-unstyled" id="lv2menu" style="background-color: #514f4f">
-                        <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Hindi</button>
-                        </li>
-                        <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">English</button>
-                        </li>
-                        <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Mathematics</button>
-                        </li>
-                        <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Science</button>
-                        </li>
-                        <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Social Studies</button>
-                        </li>
-                    </ul>
+                    <form action="showcourses.php" method="post">
+                        <ul class="collapse list-unstyled" id="lv2menu" style="background-color: #514f4f">
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="hindi2">Hindi</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="english2">English</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="maths2">Mathematics</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="science2">Science</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="sst2">Social Studies</button>
+                            </li>
+                        </ul>
+                    </form>
                 </li>
             </ul>
         </nav>
@@ -882,145 +883,6 @@ margin-top: 5%;
                     </div>
                 </div>
             </nav>
-
-                        <div class="tab">
-                <button class="tablinks" onclick="openTab(event, 'Documents')">Documents</button>
-                <button class="tablinks" onclick="openTab(event, 'Images')">Images</button>
-                <button class="tablinks" onclick="openTab(event, 'Videos')">Videos</button>
-                <button class="tablinks" onclick="openTab(event, 'Blogs')">Blogs</button>
-            </div>
-
-
-
-
-
-
-            <div id="Documents" class="tabcontent">
-               <?php
-                        $courseid = $_POST['content-id'];
-                        $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Document'";  
-                        $result = mysqli_query($Connection, $user_check_query); 
-                    
-                ?>       
-                <table class="table table-striped table-hover">
-                <?php 
-                while($row = mysqli_fetch_array($result)){
-                  $contentid = $row['content_id'];
-                  $tnail = $row['tnail'];
-                  $desc = $row['description'];
-                  $content = $row['content_name'];
-                 ?>
-                <tr>
-                <td style="vertical-align: middle;"><img style="width: 150px; height: 150px;" src="<?php echo $tnail; ?>"></td>
-                <td><?php echo $desc ?></td>
-                <td>
-                  <a target="_blank" rel="noopener noreferrer" href="<?php echo $content ?>" class="btn btn-info ">
-                          <span class="glyphicon glyphicon-eye-open"></span> View PDF
-                  </a>
-                </td>
-                <td>
-                  <form action="download.php" method="post" >
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-download-alt"></span> Download PDF</button>
-                    <input type="hidden" name="file" id="file" value="<?php echo $content ?>">
-                  </form>
-                </td>
-                <form action="listen.php" method="post" >
-                    <td><button class="btn btn-info"><span class="glyphicon glyphicon-volume-up"></span> Listen PDF</button>
-                    <input type="hidden" name="file" id="file" value="<?php echo $content ?>">
-                </form>
-                <form action="test.php" method="post" >
-                  <td><button class="btn btn-info"><span class="glyphicon glyphicon-education"></span> Take Test</button>
-                  <input type="hidden" name="id" id="id" value="<?php echo $contentid ?>">
-                </form>
-
-                </td>
-                </tr>
-                <?php } ?>
-                </table>
-        </div>
-
-
-            <div id="Images" class="tabcontent">
-                   <?php
-                            $courseid = $_POST['content-id'];
-                            $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Image'";  
-                            $result = mysqli_query($Connection, $user_check_query); 
-                        
-                    ?>       
-                    <table class="table table-striped table-hover">
-            <?php 
-            while($row = mysqli_fetch_array($result)){
-              $tnail = $row['tnail'];
-              $desc = $row['description'];
-              $content = $row['content_name'];
-             ?>
-            <tr>
-            <td><img src="<?php echo $content; ?>"></td>
-            <td><?php echo $desc ?></td>
-
-            <td>
-              <form action="download.php" method="post" >
-                <button class="btn btn-info"><span class="glyphicon glyphicon-download-alt"></span> Download Image</button>
-                <input type="hidden" name="file" id="file" value="<?php echo $content ?>">
-              </form>
-            </td>
-            </tr>
-            <?php } ?>
-            </table>
-            </div>
-
-
-
-          <div id="Videos" class="tabcontent">
-                 <?php
-                          $courseid = $_POST['content-id'];
-                          $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Video'";  
-                          $result = mysqli_query($Connection, $user_check_query); 
-                      
-                  ?>       
-                  <table class="table table-striped table-hover">
-          <?php 
-          while($row = mysqli_fetch_array($result)){
-            $tnail = $row['tnail'];
-            $desc = $row['description'];
-            $content = $row['content_name'];
-           ?>
-          <tr>
-          <td><img src="<?php echo $tnail; ?>"></td>
-          <td><?php echo $desc ?></td>
-
-          </tr>
-          <?php } ?>
-          </table>
-          </div>
-
-          
-        <div id="Blogs" class="tabcontent">
-            <B style="font-size: 3;color: black; text-align:center;">Title</B>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            
-        </div>
-
-
-
-
-
-      <script>
-          function openTab(evt, cityName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-              tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-              tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-          }
-      </script>
             
         </div>
     </div>
