@@ -665,10 +665,10 @@ margin-top: 5%;
                 display: block;
               }
             }
-h1 {
-  text-shadow: 5px 2px grey;
+            h1 {
+              text-shadow: 5px 2px grey;
 
-}
+            }
             @media screen and (max-width: 600px) {
               .topnav.responsive {position: relative;}
               .topnav.responsive .icon {
@@ -738,6 +738,52 @@ h1 {
                 display: flex;
                 position: relative;
             }
+
+            .tab {
+              overflow: hidden;
+              border: 1px solid #ccc;
+              background-color: #ff8000;
+              }
+
+              /* Style the buttons that are used to open the tab content */
+              .tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+              }
+
+              /* Change background color of buttons on hover */
+              .tab button:hover {
+                background-color: #ddd;
+              }
+
+              /* Create an active/current tablink class */
+              .tab button.active {
+                background-color: #ccc;
+              }
+
+              /* Style the tab content */
+              .tabcontent {
+                display: none;
+                padding: 6px 12px;
+                border: 1px solid #ccc;
+                border-top: none;
+              }
+
+              .tabcontent {
+                  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+                }
+
+                /* Go from zero to full opacity */
+                @keyframes fadeEffect {
+                  from {opacity: 0;}
+                  to {opacity: 1;}
+                }
+
     </style>
 
 </head>
@@ -752,47 +798,69 @@ h1 {
             </div>
 
             <ul class="list-unstyled components">
-
                 <li class="active">
                     <a href="#lv1menu" data-toggle="collapse" aria-expanded="false" style="background-color: #FF8000">Level 1</a>
-                    <ul class="collapse list-unstyled" id="lv1menu" >
-                        <li >
-                            <a style="background-color: #514f4f" href="#">Hindi</a>
-                        </li>
-                        <li >
-                            <a style="background-color: #514f4f" href="#">English</a>
-                        </li>
-                        <li >
-                            <a style="background-color: #514f4f" href="#">Mathematics</a>
-                        </li>
-                        <li >
-                            <a style="background-color: #514f4f" href="#">Science</a>
-                        </li>
-                        <li >
-                            <a style="background-color: #514f4f" href="#">Social Science</a>
-                        </li>
-                    </ul>
+                    <form action="showcourses.php" method="post">
+                        <ul class="collapse list-unstyled" id="lv1menu" >
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="hindi1">Hindi</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="english1">English</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="maths1">Mathematics</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="science1">Science</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="sst1">Social Studies</button>
+                            </li>
+                        </ul>
+                    </form>
+                    <form action="showcourses.php" method="post">
+                        <ul class="collapse list-unstyled" id="lv2menu" >
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="hindi2">Hindi</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="english2">English</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="maths2">Mathematics</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="science2">Science</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="sst2">Social Studies</button>
+                            </li>
+                        </ul>
+                    </form>
                 </li>
 
                 <li class="active">
                     <a href="#lv2menu" data-toggle="collapse" aria-expanded="false" style="background-color: #FF8000">Level 2</a>
-                    <ul class="collapse list-unstyled" id="lv2menu" style="background-color: #514f4f">
-                        <li >
-                            <a style="background-color: #514f4f" href="#">Hindi</a>
-                        </li>
-                        <li >
-                            <a style="background-color: #514f4f" href="#">English</a>
-                        </li>
-                        <li >
-                            <a style="background-color: #514f4f" href="#">Mathematics</a>
-                        </li>
-                        <li >
-                            <a style="background-color: #514f4f" href="#">Science</a>
-                        </li>
-                        <li >
-                            <a style="background-color: #514f4f" href="#">Social Science</a>
-                        </li>
-                    </ul>
+                    <form action="showcourses.php" method="post">
+                        <ul class="collapse list-unstyled" id="lv2menu" style="background-color: #514f4f">
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="hindi2">Hindi</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="english2">English</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="maths2">Mathematics</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="science2">Science</button>
+                            </li>
+                            <li >
+                                <button class="btn" style="background-color: #514f4f; color:white; width: 100%" name="sst2">Social Studies</button>
+                            </li>
+                        </ul>
+                    </form>
                 </li>
             </ul>
         </nav>
@@ -834,69 +902,6 @@ h1 {
                     </div>
                 </div>
             </nav>
-            <section class="wrap-whole">
-             <section class="container__main">      
-                <header class="container__header">
-                    <div class="topnav" id="myTopnav">
-                    <a href="classroomText.php" class="activee">TEXT</a>
-                    <a href="classroomImage.php">IMAGES</a>
-                    <a href="classroomVideo.php">VIDEOS</a>
-                    
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                </div>
-                </header>
-                <section>
-                    <article class="container__content">
-                     <table style="width:100%">
-                          <tr>
-                            <th style="padding: 10%">Firstname</th>
-                            <th style="padding: 10%" >Lastname</th> 
-                            <th style="padding: 10%">Age</th>
-                          </tr>
-                          <tr>
-                            <td style="padding: 10%">Jill</td>
-                            <td style="padding: 10%">Smith</td>
-                            <td style="padding: 10%">50</td>
-                          </tr>
-                          <tr>
-                            <td style="padding: 10%">Eve</td>
-                            <td style="padding: 10%">Jackson</td>
-                            <td style="padding: 10%">94</td>
-                          </tr>
-                          <tr>
-                            <td style="padding: 10%">John</td>
-                            <td style="padding: 10%">Doe</td>
-                            <td style="padding: 10%">80</td>
-                          </tr>
-                        </table>
-                    </article>
-                </section>
-            </section>
-
-           
-            <section class="vertical-nav-bar" style="background-color: #FF8000;color: #FF8000">
-<center><img src="top.gif" height=90% width=90%/></center>
- 
- <B style="color: black;text-align: center;;margin-right: 30%"><font face="Book Antigua" size="3">   <img src="score.gif" height=70% width=40%/>Score</B>
-<center>
- 
-</center>
-
-
- <B style="color: black;text-align: center;margin-left: 5%;margin-right: 10%"><font face="Book Antigua" size="3"> <img src="book.gif" height=40% width=40%/>Your history</B>
-
-<center>
-     <B style="color: black;text-align: center;margin-left: 5%;margin-right: 10%"><font face="Book Antigua" size="3"><img src="download.gif" height=30% width=30%/>Your Downloads</B>
-</center>
-
-<center>
-     <B style="color: black;text-align: center;margin-left: 5%;margin-right: 10%"><font face="Book Antigua" size="3"><img src="c.gif" height=35% width=35%/>Your certificates</B>
-</center>
-
-
-</section>
             
         </div>
     </div>
