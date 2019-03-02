@@ -24,12 +24,177 @@ $result = pdf2text ($pdf);
 ?>
 
 <html>
-<head><title>sound test</title></head>
-<body>
-<audio controls>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>sound test</title>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        .container-small {
+        max-width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .container-small {
+            width: 250px;
+        }
+    }
+    @media (min-width: 992px) {
+        .container-small {
+            width: 440px;
+        }
+    }
+    @media (min-width: 1200px) {
+        .container-small {
+            width: 600px;
+        }
+    }
+
+    @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #fafafa;
+    }
+</style>
+    
+</head>
+<body bgcolor="#544A4A">
+
+        <div class="container container-small">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="polaroid">
+                    <div class="card mb-4 text-white bg-dark">
+                        <img class="card-img-top" src="audi.png" alt="Card image cap">
+                        <div class="card-body">
+                        <audio controls>
   <source src="<?php echo $file; ?>" type="audio/mp3">
   <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+
 </audio>
+<br></br>
+&nbsp;&nbsp;&nbsp;
+<button id="play" onclick="playAudio();">
+          Play
+        </button>
+   
+        <button onclick="rewindAudio();">
+          Rewind
+        </button>
+        <button onclick="forwardAudio();">
+          Fast forward
+        </button>
+        <button onclick="restartAudio();">
+          Restart
+        </button>
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+</div>
+</div>
+
+<script type="text/javascript">
+        // Global variable to track current file name.
+        var currentFile = "";
+        function playAudio() {
+            // Check for audio element support.
+            if (window.HTMLAudioElement) {
+                try {
+                    var oAudio = document.getElementById('myaudio');
+                    var btn = document.getElementById('play');
+                    var audioURL = document.getElementById('audiofile');
+
+                    //Skip loading if current file hasn't changed.
+                    if (audioURL.value !== currentFile) {
+                        oAudio.src = audioURL.value;
+                        currentFile = audioURL.value;
+                    }
+
+                    // Tests the paused attribute and set state.
+                    if (oAudio.paused) {
+                        oAudio.play();
+                        btn.textContent = "Pause";
+                    }
+                    else {
+                        oAudio.pause();
+                        btn.textContent = "Play";
+                    }
+                }
+                catch (e) {
+                    // Fail silently but show in F12 developer tools console
+                    if (window.console && console.error("Error:" + e));
+                }
+            }
+        }
+        // Rewinds the audio file by 30 seconds.
+
+        function rewindAudio() {
+            // Check for audio element support.
+            if (window.HTMLAudioElement) {
+                try {
+                    var oAudio = document.getElementById('myaudio');
+                    oAudio.currentTime -= 30.0;
+                }
+                catch (e) {
+                    // Fail silently but show in F12 developer tools console
+                    if (window.console && console.error("Error:" + e));
+                }
+            }
+        }
+
+        // Fast forwards the audio file by 30 seconds.
+
+        function forwardAudio() {
+
+            // Check for audio element support.
+            if (window.HTMLAudioElement) {
+                try {
+                    var oAudio = document.getElementById('myaudio');
+                    oAudio.currentTime += 30.0;
+                }
+                catch (e) {
+                    // Fail silently but show in F12 developer tools console
+                    if (window.console && console.error("Error:" + e));
+                }
+            }
+        }
+
+        // Restart the audio file to the beginning.
+
+        function restartAudio() {
+            // Check for audio element support.
+            if (window.HTMLAudioElement) {
+                try {
+                    var oAudio = document.getElementById('myaudio');
+                    oAudio.currentTime = 0;
+                }
+                catch (e) {
+                    // Fail silently but show in F12 developer tools console
+                    if (window.console && console.error("Error:" + e));
+                }
+            }
+        }
+    </script>
 </body>
 </html>
 

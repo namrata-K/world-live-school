@@ -400,7 +400,7 @@
                         <i class="fas fa-align-justify"></i>
                     </button>
 
-                    <img class="img-responsive" src="ecolelogo.png" style="height: 10%; width: 10%">
+                    <a href="home.php"><img src="ecolelogo.png" style="height: 35%; width: 35%"></a>
 
 
                     <div class="collapse navbar-collapse"  id="navbarSupportedContent">

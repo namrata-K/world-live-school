@@ -592,14 +592,12 @@
 	      </div>
 
 	      
-<<<<<<< HEAD
         <div id="Blogs" class="tabcontent">
         	<B style="font-size: 3;color: black; text-align:center;">Title</B>
         	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
         	
         </div>
-=======
       <div id="Videos" class="tabcontent">
              <?php
                       $courseid = $_POST['content-id'];
@@ -646,11 +644,6 @@
 </p>
 	
 </div>
->>>>>>> 9cc21b0b0bda3301899ce4e65a5405ca7fe86807
-
-
-
-
 
       <script>
           function openTab(evt, cityName) {
