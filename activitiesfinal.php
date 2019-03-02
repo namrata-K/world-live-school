@@ -345,46 +345,46 @@
             <center>
                 <div class="container">
                   <div class="row">
-                    <div class="col" style="height: 300px; padding: 20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: lightblue" ><font size="6"><B>GANGA</B></font>
+                    <div class="col" style="height: 300px; padding: 20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: #ba0e0e; color: white" ><font size="6"><B>GANGA</B></font>
                         <p class="quote-contain">
-                        	<font color=black>
-                        		Successful and unsuccessful people do not vary greatly in their abilities. They vary in their desires to reach their potential
+                        	<font color=white>
+                        		"Successful and unsuccessful people do not vary greatly in their abilities. They vary in their desires to reach their potential."
 							</font>
 						</p>
-						<h1><font size=5px color=black align="right">HOUSE SCORE</font></h1>
-						<h1><font size=5px color=black align="right">STAR PERFORMER</font></h1><
+						<h1><font size=5px color=black align="right" style="color: white">HOUSE SCORE</font></h1>
+						<h1><font size=5px color=black align="right" style="color: white">STAR PERFORMER</font></h1>
 					</div>
 
-                    <div class="col" style="height: 300px; padding: 20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: red"><font size="6"><B>YAMUNA</B></font>               
+                    <div class="col" style="height: 300px; padding: 20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: #030247; color: white"><font size="6"><B>YAMUNA</B></font>               
                     	<p class="quote-contain">
-                    		<font color=black>
-                    			Don’t let what you cannot do interfere with what you can do.
+                    		<font color=white>
+                    			"Don’t let what you cannot do interfere with what you can do."
 							</font>
 						</p>
-							<h1><font size=5px color=black align="right">HOUSE SCORE</font></h1>
-							<h1><font size=5px color=black align="right">STAR PERFORMER</font></h1>
+							<h1><font size=5px color=black align="right" style="color: white">HOUSE SCORE</font></h1>
+							<h1><font size=5px color=black align="right" style="color: white">STAR PERFORMER</font></h1>
 					</div>
 
                     <div class="w-100"></div>
 
-                    <div class="col" style="height: 300px; padding:20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: yellow"><font size="6"><B>KAVERI</B></font>               
+                    <div class="col" style="height: 300px; padding:20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: #dbd008; color: white"><font size="6"><B>KAVERI</B></font>               
                     	<p class="quote-contain">
-                    		<font color=black> 
-                    			Successful and unsuccessful people do not vary greatly in their abilities. They vary in their desires to reach their potential.
+                    		<font color=white> 
+                    			"Successful and unsuccessful people do not vary greatly in their abilities. They vary in their desires to reach their potential."
 							</font>
 						</p>
-						<h1><font size=5px color=black align="right">HOUSE SCORE</font></h1>
-						<h1><font size=5px color=black align="right">STAR PERFORMER</font></h1>
+						<h1><font size=5px color=black align="right" style="color: white">HOUSE SCORE</font></h1>
+						<h1><font size=5px color=black align="right" style="color: white">STAR PERFORMER</font></h1>
 					</div>
 
-                    <div class="col" style="height: 300px; padding:20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: green"><font size="6"><B>KRISHNA</B></font>               
+                    <div class="col" style="height: 300px; padding:20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: #184f0c; color: white"><font size="6"><B>KRISHNA</B></font>               
                     	<p class="quote-contain">
-                    		<font color=black>
-                    			Failure is the opportunity to begin again more intelligently.
+                    		<font color=white>
+                    			"Failure is the opportunity to begin again more intelligently."
 							</font>
 						</p>
-						<h1><font size=5px color=black align="right">HOUSE SCORE</font></p>
-						<h1><font size=5px color=black align="right">STAR PERFORMER</font></p>
+						<h1><font size=5px color=black align="right" style="color: white">HOUSE SCORE</font></p>
+						<h1><font size=5px color=black align="right" style="color: white">STAR PERFORMER</font></p>
 					</div>
                   </div>
                 </div>
