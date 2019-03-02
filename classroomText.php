@@ -803,20 +803,26 @@ margin-top: 5%;
                     <a href="#lv1menu" data-toggle="collapse" aria-expanded="false" style="background-color: #FF8000">Level 1</a>
                     <ul class="collapse list-unstyled" id="lv1menu" >
                         <li >
+<<<<<<< HEAD
                             <button style="background-color: #514f4f">Hindi</button>
+=======
+                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Hindi</button>
+>>>>>>> 38cf3e3642f19c2f5f1449478e0593dfd7b91afb
                         </li>
                         <li >
-                            <a style="background-color: #514f4f" href="#">English</a>
+                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">English</button>
                         </li>
                         <li >
-                            <a style="background-color: #514f4f" href="#">Mathematics</a>
+                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Mathematics</button>
                         </li>
                         <li >
-                            <a style="background-color: #514f4f" href="#">Science</a>
+                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Science</button>
                         </li>
                         <li >
-                            <a style="background-color: #514f4f" href="#">Social Science</a>
+                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Social Studies</button>
                         </li>
+                        
+                        
                     </ul>
                 </li>
 
@@ -824,19 +830,19 @@ margin-top: 5%;
                     <a href="#lv2menu" data-toggle="collapse" aria-expanded="false" style="background-color: #FF8000">Level 2</a>
                     <ul class="collapse list-unstyled" id="lv2menu" style="background-color: #514f4f">
                         <li >
-                            <a style="background-color: #514f4f" href="#">Hindi</a>
+                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Hindi</button>
                         </li>
                         <li >
-                            <a style="background-color: #514f4f" href="#">English</a>
+                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">English</button>
                         </li>
                         <li >
-                            <a style="background-color: #514f4f" href="#">Mathematics</a>
+                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Mathematics</button>
                         </li>
                         <li >
-                            <a style="background-color: #514f4f" href="#">Science</a>
+                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Science</button>
                         </li>
                         <li >
-                            <a style="background-color: #514f4f" href="#">Social Science</a>
+                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Social Studies</button>
                         </li>
                     </ul>
                 </li>
