@@ -3,6 +3,7 @@
     $Connection = mysqli_connect('localhost', 'root', '');
     $Selected = mysqli_select_db($Connection, 'live_school');
     $id=$_SESSION["id"];
+    $courseid = $_POST['content-id'];
     $user_check_query = "SELECT * FROM signup_student WHERE id='$id' LIMIT 1";  
     $Execute = mysqli_query($Connection, $user_check_query); 
     $DataRow = mysqli_fetch_array($Execute);
@@ -11,6 +12,17 @@
         $name = $DataRow['name'];
         $uname = $DataRow['uname'];
         $dob = $DataRow['dob'];
+    }
+
+    $blog_query = "SELECT title, description from blog where course_id='$courseid' "; 
+    $Execute = mysqli_query($Connection, $blog_query); 
+    $DataRow = mysqli_fetch_array($Execute);
+    echo "hey";
+    if($DataRow)
+    {   echo "ehy";
+        $title = $DataRow['title'];
+        echo $title;
+        $desc = $DataRow['desc'];
     }
 ?>
 <!DOCTYPE html>
@@ -494,7 +506,7 @@
 
             <div id="Documents" class="tabcontent">
                <?php
-                        $courseid = $_POST['content-id'];
+                        
                         $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Document'";  
                         $result = mysqli_query($Connection, $user_check_query); 
                     
@@ -624,18 +636,14 @@
       </div>
 <div id="Blogs" class="tabcontent">
 	<header class="w3-container w3-red w3-center" style="padding:128px 16px; height: 200px">
-  <h2 class="w3-margin w3-jumbo">TITLE</h2>
+  <h2 class="w3-margin w3-jumbo"><?php echo $title; ?></h2>
 </header>
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
 
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p class="w3-text-grey"><?php echo $desc; ?></p>
 
   </div>
 </div>
