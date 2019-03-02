@@ -752,44 +752,45 @@ h1 {
             </div>
 
             <ul class="list-unstyled components">
+
                 <li class="active">
-                    <a href="#lv1menu" data-toggle="collapse" aria-expanded="false">Level 1</a>
-                    <ul class="collapse list-unstyled" id="lv1menu">
-                        <li>
-                            <a href="#">Hindi</a>
+                    <a href="#lv1menu" data-toggle="collapse" aria-expanded="false" style="background-color: #FF8000">Level 1</a>
+                    <ul class="collapse list-unstyled" id="lv1menu" >
+                        <li >
+                            <a style="background-color: #514f4f" href="#">Hindi</a>
                         </li>
-                        <li>
-                            <a href="#">Engkish 2</a>
+                        <li >
+                            <a style="background-color: #514f4f" href="#">English</a>
                         </li>
-                        <li>
-                            <a href="#">Mathematics</a>
+                        <li >
+                            <a style="background-color: #514f4f" href="#">Mathematics</a>
                         </li>
-                        <li>
-                            <a href="#">Science</a>
+                        <li >
+                            <a style="background-color: #514f4f" href="#">Science</a>
                         </li>
-                        <li>
-                            <a href="#">Social Studies</a>
+                        <li >
+                            <a style="background-color: #514f4f" href="#">Social Science</a>
                         </li>
                     </ul>
                 </li>
 
                 <li class="active">
-                    <a href="#lv2menu" data-toggle="collapse" aria-expanded="false">Level 2</a>
-                    <ul class="collapse list-unstyled" id="lv2menu">
-                        <li>
-                            <a href="#">Hindi</a>
+                    <a href="#lv2menu" data-toggle="collapse" aria-expanded="false" style="background-color: #FF8000">Level 2</a>
+                    <ul class="collapse list-unstyled" id="lv2menu" style="background-color: #514f4f">
+                        <li >
+                            <a style="background-color: #514f4f" href="#">Hindi</a>
                         </li>
-                        <li>
-                            <a href="#">Engkish 2</a>
+                        <li >
+                            <a style="background-color: #514f4f" href="#">English</a>
                         </li>
-                        <li>
-                            <a href="#">Mathematics</a>
+                        <li >
+                            <a style="background-color: #514f4f" href="#">Mathematics</a>
                         </li>
-                        <li>
-                            <a href="#">Science</a>
+                        <li >
+                            <a style="background-color: #514f4f" href="#">Science</a>
                         </li>
-                        <li>
-                            <a href="#">Social Studies</a>
+                        <li >
+                            <a style="background-color: #514f4f" href="#">Social Science</a>
                         </li>
                     </ul>
                 </li>
@@ -833,7 +834,7 @@ h1 {
                     </div>
                 </div>
             </nav>
-<section class="wrap-whole">
+            <section class="wrap-whole">
              <section class="container__main">      
                 <header class="container__header">
                     <div class="topnav" id="myTopnav">
