@@ -13,6 +13,27 @@
         $dob = $DataRow['dob'];
     }
 
+      $max_score=0;
+      while(1)
+      {  
+         $max_query = "SELECT max(score) as ms from signup_student where score <> '$max_score' limit 1";
+         $Execute = mysqli_query($Connection, $max_query); 
+         $DataRow = mysqli_fetch_assoc($Execute); 
+         if($DataRow)
+            $max_score = $DataRow['ms'];
+         $user_check_query = "SELECT id,name,score,donor FROM signup_student WHERE score='$max_score'  LIMIT 1"; 
+         $Execute = mysqli_query($Connection, $user_check_query); 
+         $DataRow = mysqli_fetch_assoc($Execute);
+         if($DataRow['donor'] != 1)  break;
+      } 
+      if($DataRow){
+       $name= $DataRow['name'];
+       $score = $DataRow['score'];
+       $id = $DataRow['id'];
+       $_SESSION["child_name"]=$name;
+       $_SESSION["child_id"]=$id;
+    }
+
 ?>
 
 <!DOCTYPE html>
