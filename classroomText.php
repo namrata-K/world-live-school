@@ -665,10 +665,10 @@ margin-top: 5%;
                 display: block;
               }
             }
-            h1 {
-              text-shadow: 5px 2px grey;
+h1 {
+  text-shadow: 5px 2px grey;
 
-            }
+}
             @media screen and (max-width: 600px) {
               .topnav.responsive {position: relative;}
               .topnav.responsive .icon {
@@ -738,52 +738,6 @@ margin-top: 5%;
                 display: flex;
                 position: relative;
             }
-
-            .tab {
-              overflow: hidden;
-              border: 1px solid #ccc;
-              background-color: #ff8000;
-              }
-
-              /* Style the buttons that are used to open the tab content */
-              .tab button {
-                background-color: inherit;
-                float: left;
-                border: none;
-                outline: none;
-                cursor: pointer;
-                padding: 14px 16px;
-                transition: 0.3s;
-              }
-
-              /* Change background color of buttons on hover */
-              .tab button:hover {
-                background-color: #ddd;
-              }
-
-              /* Create an active/current tablink class */
-              .tab button.active {
-                background-color: #ccc;
-              }
-
-              /* Style the tab content */
-              .tabcontent {
-                display: none;
-                padding: 6px 12px;
-                border: 1px solid #ccc;
-                border-top: none;
-              }
-
-              .tabcontent {
-                  animation: fadeEffect 1s; /* Fading effect takes 1 second */
-                }
-
-                /* Go from zero to full opacity */
-                @keyframes fadeEffect {
-                  from {opacity: 0;}
-                  to {opacity: 1;}
-                }
-
     </style>
 
 </head>
@@ -803,26 +757,20 @@ margin-top: 5%;
                     <a href="#lv1menu" data-toggle="collapse" aria-expanded="false" style="background-color: #FF8000">Level 1</a>
                     <ul class="collapse list-unstyled" id="lv1menu" >
                         <li >
-<<<<<<< HEAD
-                            <button style="background-color: #514f4f">Hindi</button>
-=======
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Hindi</button>
->>>>>>> 38cf3e3642f19c2f5f1449478e0593dfd7b91afb
+                            <a style="background-color: #514f4f" href="#">Hindi</a>
                         </li>
                         <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">English</button>
+                            <a style="background-color: #514f4f" href="#">English</a>
                         </li>
                         <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Mathematics</button>
+                            <a style="background-color: #514f4f" href="#">Mathematics</a>
                         </li>
                         <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Science</button>
+                            <a style="background-color: #514f4f" href="#">Science</a>
                         </li>
                         <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Social Studies</button>
+                            <a style="background-color: #514f4f" href="#">Social Science</a>
                         </li>
-                        
-                        
                     </ul>
                 </li>
 
@@ -830,19 +778,19 @@ margin-top: 5%;
                     <a href="#lv2menu" data-toggle="collapse" aria-expanded="false" style="background-color: #FF8000">Level 2</a>
                     <ul class="collapse list-unstyled" id="lv2menu" style="background-color: #514f4f">
                         <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Hindi</button>
+                            <a style="background-color: #514f4f" href="#">Hindi</a>
                         </li>
                         <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">English</button>
+                            <a style="background-color: #514f4f" href="#">English</a>
                         </li>
                         <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Mathematics</button>
+                            <a style="background-color: #514f4f" href="#">Mathematics</a>
                         </li>
                         <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Science</button>
+                            <a style="background-color: #514f4f" href="#">Science</a>
                         </li>
                         <li >
-                            <button class="btn" style="background-color: #514f4f; color:white; width: 100%" href="#">Social Studies</button>
+                            <a style="background-color: #514f4f" href="#">Social Science</a>
                         </li>
                     </ul>
                 </li>
@@ -886,145 +834,69 @@ margin-top: 5%;
                     </div>
                 </div>
             </nav>
-
-                        <div class="tab">
-                <button class="tablinks" onclick="openTab(event, 'Documents')">Documents</button>
-                <button class="tablinks" onclick="openTab(event, 'Images')">Images</button>
-                <button class="tablinks" onclick="openTab(event, 'Videos')">Videos</button>
-                <button class="tablinks" onclick="openTab(event, 'Blogs')">Blogs</button>
-            </div>
-
-
-
-
-
-
-            <div id="Documents" class="tabcontent">
-               <?php
-                        $courseid = $_POST['content-id'];
-                        $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Document'";  
-                        $result = mysqli_query($Connection, $user_check_query); 
+            <section class="wrap-whole">
+             <section class="container__main">      
+                <header class="container__header">
+                    <div class="topnav" id="myTopnav">
+                    <a href="classroomText.php" class="activee">TEXT</a>
+                    <a href="classroomImage.php">IMAGES</a>
+                    <a href="classroomVideo.php">VIDEOS</a>
                     
-                ?>       
-                <table class="table table-striped table-hover">
-                <?php 
-                while($row = mysqli_fetch_array($result)){
-                  $contentid = $row['content_id'];
-                  $tnail = $row['tnail'];
-                  $desc = $row['description'];
-                  $content = $row['content_name'];
-                 ?>
-                <tr>
-                <td style="vertical-align: middle;"><img style="width: 150px; height: 150px;" src="<?php echo $tnail; ?>"></td>
-                <td><?php echo $desc ?></td>
-                <td>
-                  <a target="_blank" rel="noopener noreferrer" href="<?php echo $content ?>" class="btn btn-info ">
-                          <span class="glyphicon glyphicon-eye-open"></span> View PDF
-                  </a>
-                </td>
-                <td>
-                  <form action="download.php" method="post" >
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-download-alt"></span> Download PDF</button>
-                    <input type="hidden" name="file" id="file" value="<?php echo $content ?>">
-                  </form>
-                </td>
-                <form action="listen.php" method="post" >
-                    <td><button class="btn btn-info"><span class="glyphicon glyphicon-volume-up"></span> Listen PDF</button>
-                    <input type="hidden" name="file" id="file" value="<?php echo $content ?>">
-                </form>
-                <form action="test.php" method="post" >
-                  <td><button class="btn btn-info"><span class="glyphicon glyphicon-education"></span> Take Test</button>
-                  <input type="hidden" name="id" id="id" value="<?php echo $contentid ?>">
-                </form>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+                </header>
+                <section>
+                    <article class="container__content">
+                     <table style="width:100%">
+                          <tr>
+                            <th style="padding: 10%">Firstname</th>
+                            <th style="padding: 10%" >Lastname</th> 
+                            <th style="padding: 10%">Age</th>
+                          </tr>
+                          <tr>
+                            <td style="padding: 10%">Jill</td>
+                            <td style="padding: 10%">Smith</td>
+                            <td style="padding: 10%">50</td>
+                          </tr>
+                          <tr>
+                            <td style="padding: 10%">Eve</td>
+                            <td style="padding: 10%">Jackson</td>
+                            <td style="padding: 10%">94</td>
+                          </tr>
+                          <tr>
+                            <td style="padding: 10%">John</td>
+                            <td style="padding: 10%">Doe</td>
+                            <td style="padding: 10%">80</td>
+                          </tr>
+                        </table>
+                    </article>
+                </section>
+            </section>
 
-                </td>
-                </tr>
-                <?php } ?>
-                </table>
-        </div>
-
-
-            <div id="Images" class="tabcontent">
-                   <?php
-                            $courseid = $_POST['content-id'];
-                            $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Image'";  
-                            $result = mysqli_query($Connection, $user_check_query); 
-                        
-                    ?>       
-                    <table class="table table-striped table-hover">
-            <?php 
-            while($row = mysqli_fetch_array($result)){
-              $tnail = $row['tnail'];
-              $desc = $row['description'];
-              $content = $row['content_name'];
-             ?>
-            <tr>
-            <td><img src="<?php echo $content; ?>"></td>
-            <td><?php echo $desc ?></td>
-
-            <td>
-              <form action="download.php" method="post" >
-                <button class="btn btn-info"><span class="glyphicon glyphicon-download-alt"></span> Download Image</button>
-                <input type="hidden" name="file" id="file" value="<?php echo $content ?>">
-              </form>
-            </td>
-            </tr>
-            <?php } ?>
-            </table>
-            </div>
+           
+            <section class="vertical-nav-bar" style="background-color: #FF8000;color: #FF8000">
+<center><img src="top.gif" height=90% width=90%/></center>
+ 
+ <B style="color: black;text-align: center;;margin-right: 30%"><font face="Book Antigua" size="3">   <img src="score.gif" height=70% width=40%/>Score</B>
+<center>
+ 
+</center>
 
 
+ <B style="color: black;text-align: center;margin-left: 5%;margin-right: 10%"><font face="Book Antigua" size="3"> <img src="book.gif" height=40% width=40%/>Your history</B>
 
-          <div id="Videos" class="tabcontent">
-                 <?php
-                          $courseid = $_POST['content-id'];
-                          $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Video'";  
-                          $result = mysqli_query($Connection, $user_check_query); 
-                      
-                  ?>       
-                  <table class="table table-striped table-hover">
-          <?php 
-          while($row = mysqli_fetch_array($result)){
-            $tnail = $row['tnail'];
-            $desc = $row['description'];
-            $content = $row['content_name'];
-           ?>
-          <tr>
-          <td><img src="<?php echo $tnail; ?>"></td>
-          <td><?php echo $desc ?></td>
+<center>
+     <B style="color: black;text-align: center;margin-left: 5%;margin-right: 10%"><font face="Book Antigua" size="3"><img src="download.gif" height=30% width=30%/>Your Downloads</B>
+</center>
 
-          </tr>
-          <?php } ?>
-          </table>
-          </div>
-
-          
-        <div id="Blogs" class="tabcontent">
-            <B style="font-size: 3;color: black; text-align:center;">Title</B>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            
-        </div>
+<center>
+     <B style="color: black;text-align: center;margin-left: 5%;margin-right: 10%"><font face="Book Antigua" size="3"><img src="c.gif" height=35% width=35%/>Your certificates</B>
+</center>
 
 
-
-
-
-      <script>
-          function openTab(evt, cityName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-              tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-              tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-          }
-      </script>
+</section>
             
         </div>
     </div>
