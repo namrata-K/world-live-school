@@ -253,7 +253,6 @@
           <div class="flip-box">
             <div class="flip-box-inner">
               <div class="flip-box-front">
-                <a href ="login_student.html">
                   <img src="a.png" alt="Student" style="width:200px;height:200px;">
                 
               </div>
@@ -271,7 +270,6 @@
           <div class="flip-box">
             <div class="flip-box-inner">
               <div class="flip-box-front">
-                <a href ="login_teacher.html">
                   <img src="c.png" alt="Volunteer" style="width:200px;height:200px;">
                 
               </div>
