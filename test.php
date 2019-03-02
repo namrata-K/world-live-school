@@ -1,3 +1,6 @@
+
+
+
 <?php
     session_start();
     $Connection = mysqli_connect('localhost', 'root', '');
@@ -34,15 +37,17 @@ while($row = mysqli_fetch_array($result)){
 </head>
 <body> Answer the following questions
 	<div>
-		<?php echo $question?>
+		<?php echo $question;?>
 	</div>
 	<div>
-		<form action="answer.php">
-  			<input type="radio" name="answer" value="<?php echo $option1 ?>"> <?php echo $option1 ?><br>
-  			<input type="radio" name="answer" value="<?php echo $option2 ?>"> <?php echo $option2 ?><br>
-  			<input type="radio" name="answer" value="<?php echo $option3 ?>"> <?php echo $option3 ?><br>  
-  			<input type="submit" value="Submit">
-		</form>
+		<form action="answer.php" method="post">
+<input type="radio" name="radio" value="<?php echo $option1?>"><?php echo $option1?>
+<input type="radio" name="radio" value="<?php echo $option2?>"><?php echo $option2?>
+<input type="radio" name="radio" value="<?php echo $option3?>"><?php echo $option3?>
+<input type="hidden" name="correct" id="correct" value="<?php echo $answer; ?>">
+<input type="submit" name="submit" value="Submit" />
+</form>
+
 	</div>
 </body>
 </html>
