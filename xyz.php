@@ -1,3 +1,18 @@
+<?php
+    session_start();
+    $Connection = mysqli_connect('localhost', 'root', '');
+    $Selected = mysqli_select_db($Connection, 'live_school');
+    $id=$_SESSION["id"];
+    $user_check_query = "SELECT * FROM signup_student WHERE id='$id' LIMIT 1";  
+    $Execute = mysqli_query($Connection, $user_check_query); 
+    $DataRow = mysqli_fetch_array($Execute);
+    if($DataRow){ 
+
+        $name = $DataRow['name'];
+        $uname = $DataRow['uname'];
+        $dob = $DataRow['dob'];
+    }
+?>
 <!DOCTYPE html>
 <html>
 
