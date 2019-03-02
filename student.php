@@ -419,10 +419,7 @@
             ?>    
                </tr>
                </table>
-
-
             <h2 class="text-center mb-3">Intermediate Courses</h2>
-                     
                       <?php
 
                 $user_check_query = "SELECT * FROM course";  

@@ -14,15 +14,13 @@
         $dob = $DataRow['dob'];
     }
 
-    $blog_query = "SELECT title, description from blog where course_id='$courseid' "; 
+    $blog_query = "SELECT * from blog where course_id='$courseid' "; 
     $Execute = mysqli_query($Connection, $blog_query); 
     $DataRow = mysqli_fetch_array($Execute);
-    echo "hey";
     if($DataRow)
-    {   echo "ehy";
+    {   
         $title = $DataRow['title'];
-        echo $title;
-        $desc = $DataRow['desc'];
+        $blog_desc = $DataRow['description'];
     }
 ?>
 <!DOCTYPE html>
@@ -636,16 +634,10 @@
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
 
-      <p class="w3-text-grey"><?php echo $desc; ?></p>
+      <p class="w3-text-grey"><?php echo $blog_desc; ?></p>
 
   </div>
 </div>
-
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-</p>
-	
 </div>
 
 
