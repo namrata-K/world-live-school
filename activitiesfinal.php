@@ -13,26 +13,84 @@
         $dob = $DataRow['dob'];
     }
 
-      $max_score=0;
-      while(1)
-      {  
-         $max_query = "SELECT max(score) as ms from signup_student where score <> '$max_score' limit 1";
-         $Execute = mysqli_query($Connection, $max_query); 
-         $DataRow = mysqli_fetch_assoc($Execute); 
-         if($DataRow)
-            $max_score = $DataRow['ms'];
-         $user_check_query = "SELECT id,name,score,donor FROM signup_student WHERE score='$max_score'  LIMIT 1"; 
-         $Execute = mysqli_query($Connection, $user_check_query); 
-         $DataRow = mysqli_fetch_assoc($Execute);
-         if($DataRow['donor'] != 1)  break;
-      } 
-      if($DataRow){
-       $name= $DataRow['name'];
-       $score = $DataRow['score'];
-       $id = $DataRow['id'];
-       $_SESSION["child_name"]=$name;
-       $_SESSION["child_id"]=$id;
-    }
+      $query_ganga_score = "SELECT sum(score) as sum from signup_student where house = 'Ganga' ";
+  $Execute = mysqli_query($Connection, $query_ganga_score); 
+  $ganga_score = 0;
+  $DataGRow = mysqli_fetch_array($Execute);
+  $ganga_score = $DataGRow['sum'];
+  
+  $query_yamuna_score = "SELECT sum(score) as sum from signup_student where house = 'Yamuna' ";
+  $Execute = mysqli_query($Connection, $query_yamuna_score); 
+  $yamuna_score = 0;
+  $DataYRow = mysqli_fetch_array($Execute);
+  $yamuna_score = $DataYRow['sum'];
+  
+  $query_krishna_score = "SELECT sum(score) as sum from signup_student where house = 'Krishna' ";
+  $Execute = mysqli_query($Connection, $query_krishna_score); 
+  $krishna_score = 0;
+  $DataKRow = mysqli_fetch_array($Execute);
+  $krishna_score = $DataKRow['sum'];
+  
+  $query_kaveri_score = "SELECT sum(score) as sum from signup_student where house = 'Kaveri' ";
+  $Execute = mysqli_query($Connection, $query_kaveri_score); 
+  $kaveri_score = 0;
+  $DataKRow = mysqli_fetch_array($Execute);
+  $kaveri_score = $DataKRow['sum'];
+  
+  $top_house = 'ganga';
+  $max_score = $ganga_score;
+  if($yamuna_score > $max_score)
+  {
+    $top_house = 'yamuna';
+    $max_score = $yamuna_score;
+  }
+  if($krishna_score > $max_score)
+  {
+    $top_house = 'Krishna';
+    $max_score = $krishna_score;
+  }
+  if($kaveri_score > $max_score)
+  {
+    $top_house = 'Kaveri';
+    $max_score = $kaveri_score;
+  }
+
+  $query_ganga_max = "SELECT max(score) as max from signup_student where house = 'Ganga' ";
+  $Execute = mysqli_query($Connection, $query_ganga_max); 
+  $DataRow = mysqli_fetch_array($Execute);
+  $max_ganga = $DataRow['max'];
+  $query_ganga_gem = "SELECT name from signup_student where score = '$max_ganga' ";
+  $Execute = mysqli_query($Connection, $query_ganga_gem); 
+  $DataRow = mysqli_fetch_array($Execute);
+  $gem_ganga = $DataRow['name'];
+
+  $query_krishna_max = "SELECT max(score) as max from signup_student where house = 'Krishna' ";
+  $Execute = mysqli_query($Connection, $query_krishna_max); 
+  $DataRow = mysqli_fetch_array($Execute);
+  $max_krishna = $DataRow['max'];
+  $query_krishna_gem = "SELECT name from signup_student where score = '$max_krishna' ";
+  $Execute = mysqli_query($Connection, $query_krishna_gem); 
+  $DataRow = mysqli_fetch_array($Execute);
+  $gem_krishna = $DataRow['name'];
+  
+  $query_yamuna_max = "SELECT max(score) as max from signup_student where house = 'Yamuna' ";
+  $Execute = mysqli_query($Connection, $query_yamuna_max); 
+  $DataRow = mysqli_fetch_array($Execute);
+  $max_yamuna = $DataRow['max'];
+  $query_yamuna_gem = "SELECT name from signup_student where score = '$max_yamuna' ";
+  $Execute = mysqli_query($Connection, $query_yamuna_gem); 
+  $DataRow = mysqli_fetch_array($Execute);
+  $gem_yamuna = $DataRow['name'];
+  
+  $query_kaveri_max = "SELECT max(score) as max from signup_student where house = 'Kaveri' ";
+  $Execute = mysqli_query($Connection, $query_kaveri_max); 
+  $DataRow = mysqli_fetch_array($Execute);
+  $max_kaveri = $DataRow['max'];
+  $query_kaveri_gem = "SELECT name from signup_student where score = '$max_kaveri' ";
+  $Execute = mysqli_query($Connection, $query_kaveri_gem); 
+  $DataRow = mysqli_fetch_array($Execute);
+  $gem_kaveri = $DataRow['name'];
+
 
 ?>
 
@@ -264,6 +322,7 @@
     #canvasContainer {
     position: relative;
     width: 300px;
+    left: -200px;
 }
  
 #canvas {
@@ -372,8 +431,8 @@
                         		"Successful and unsuccessful people do not vary greatly in their abilities. They vary in their desires to reach their potential."
 							</font>
 						</p>
-						<h1><font size=5px color=black align="right" style="color: white">HOUSE SCORE</font></h1>
-						<h1><font size=5px color=black align="right" style="color: white">STAR PERFORMER</font></h1>
+						<h1><font size=5px color=black align="right" style="color: white">HOUSE SCORE: <?php echo $ganga_score; ?></font></h1>
+						<h1><font size=5px color=black align="right" style="color: white">STAR PERFORMER: <?php echo $gem_ganga; ?></font></h1>
 					</div>
 
                     <div class="col" style="height: 300px; padding: 20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: #030247; color: white"><font size="6"><B>YAMUNA</B></font>               
@@ -382,8 +441,8 @@
                     			"Don’t let what you cannot do interfere with what you can do."
 							</font>
 						</p>
-							<h1><font size=5px color=black align="right" style="color: white">HOUSE SCORE</font></h1>
-							<h1><font size=5px color=black align="right" style="color: white">STAR PERFORMER</font></h1>
+							<h1><font size=5px color=black align="right" style="color: white">HOUSE SCORE: <?php echo $yamuna_score; ?></font></h1>
+							<h1><font size=5px color=black align="right" style="color: white">STAR PERFORMER: <?php echo $gem_yamuna; ?></font></h1>
 					</div>
 
                     <div class="w-100"></div>
@@ -394,8 +453,8 @@
                     			"Successful and unsuccessful people do not vary greatly in their abilities. They vary in their desires to reach their potential."
 							</font>
 						</p>
-						<h1><font size=5px color=black align="right" style="color: white">HOUSE SCORE</font></h1>
-						<h1><font size=5px color=black align="right" style="color: white">STAR PERFORMER</font></h1>
+						<h1><font size=5px color=black align="right" style="color: white">HOUSE SCORE: <?php echo $kaveri_score; ?></font></h1>
+						<h1><font size=5px color=black align="right" style="color: white">STAR PERFORMER: <?php echo $gem_kaveri; ?></font></h1>
 					</div>
 
                     <div class="col" style="height: 300px; padding:20px; box-shadow: 5px 5px #888888; border-radius: 25px; margin: 5px; background-color: #184f0c; color: white"><font size="6"><B>KRISHNA</B></font>               
@@ -404,18 +463,23 @@
                     			"Failure is the opportunity to begin again more intelligently."
 							</font>
 						</p>
-						<h1><font size=5px color=black align="right" style="color: white">HOUSE SCORE</font></p>
-						<h1><font size=5px color=black align="right" style="color: white">STAR PERFORMER</font></p>
+						<h1><font size=5px color=black align="right" style="color: white">HOUSE SCORE: <?php echo $krishna_score; ?></font></p>
+						<h1><font size=5px color=black align="right" style="color: white">STAR PERFORMER: <?php echo $gem_krishna; ?></font></p>
 					</div>
                   </div>
                 </div>
             </center>
             <div class="container">
-                  <button style="float: right" type="button" class="btn btn-primary">Warning</button>
+                  <button style="float: right" type="button"  class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#spinModal">Take quiz now</button>
                   </div>
 
-
-             <div id="canvasContainer">
+            <div class="modal fade" id="spinModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+       
+        <!-- Modal body -->
+        <div class="modal-body" style="color: black; ">
+               <div id="canvasContainer">
         <canvas id='canvas' width='880' height='800'>
             Canvas not supported, use another browser.
         </canvas>
@@ -495,7 +559,14 @@ function alertPrize()
 
     <div class="overlay"></div>
 
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+              <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
