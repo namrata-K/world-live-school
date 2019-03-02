@@ -16,9 +16,6 @@
 
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -333,6 +330,7 @@
         <div class="modal-body">
           <button type="button" class="btn btn-danger" data-dismiss="modal" name="urc" data-toggle="modal" data-target="#random_cmodal">Upload Random Course</button>
           <button type="button" class="btn btn-danger" data-dismiss="modal" name="ucc" data-toggle="modal" data-target="#class_cmodal">Upload Classroom Course</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" name="ucc" data-toggle="modal" data-target="#bmodal">Upload blog</button>
         </div>
       </div>
     </div>
@@ -473,6 +471,35 @@
             <div class="form-group">
                 <label for="file" style="color: black;">Upload Thumbnail</label>
                 <input type="file" class="form-control" name ="file" id="file" aria-describedby="name" placeholder="Upload thumbnail here">
+            </div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger" name="random_course">Upload now</button> 
+      </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- end of modal -->
+
+<div class="modal fade" id="bmodal" style="height: 100%;overflow-y: auto;">
+    <div class="modal-dialog" >
+      <div class="modal-content" >
+        <!-- Modal body -->
+        <div class="modal-body">
+         <form action="blog.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="courseID" style="color: black;">Course ID</label>
+                <input type="number" class="form-control" id="c_id" name="c_id" aria-describedby="name" placeholder="Enter Course ID">
+            </div>
+            <div class="form-group">
+                <label for="title" style="color: black;">Title</label>
+                <input type="text" class="form-control" id="title" name="title" aria-describedby="name" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <label for="description" style="color: black;">Description</label>
+                <input type="text" class="form-control" id="desc" name="desc" aria-describedby="name" placeholder="Write your content here">
             </div>
         </div>
         <!-- Modal footer -->

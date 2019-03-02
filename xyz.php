@@ -17,12 +17,15 @@
 <html>
 
 <head>
+<<<<<<< HEAD
+=======
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+>>>>>>> e8e1bf810e867c499a34a3a85261f3306ebb7fd4
 
     <title>Student</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -508,7 +511,7 @@
                   $content = $row['content_name'];
                  ?>
                 <tr>
-                <td><img src="<?php echo $tnail; ?>"></td>
+                <td style="vertical-align: middle;"><img style="width: 150px; height: 150px;" src="<?php echo $tnail; ?>"></td>
                 <td><?php echo $desc ?></td>
                 <td>
                   <a target="_blank" rel="noopener noreferrer" href="<?php echo $content ?>" class="btn btn-info ">
@@ -568,6 +571,30 @@
 
 
 
+	      <div id="Videos" class="tabcontent">
+	             <?php
+	                      $courseid = $_POST['content-id'];
+	                      $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Video'";  
+	                      $result = mysqli_query($Connection, $user_check_query); 
+	                  
+	              ?>       
+	              <table class="table table-striped table-hover">
+	      <?php 
+	      while($row = mysqli_fetch_array($result)){
+	        $tnail = $row['tnail'];
+	        $desc = $row['description'];
+	        $content = $row['content_name'];
+	       ?>
+	      <tr>
+	      <td><img src="<?php echo $tnail; ?>"></td>
+	      <td><?php echo $desc ?></td>
+
+	      </tr>
+	      <?php } ?>
+	      </table>
+	      </div>
+
+	      
       <div id="Videos" class="tabcontent">
              <?php
                       $courseid = $_POST['content-id'];
@@ -609,6 +636,7 @@
 </div>
 
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 </p>
 	
