@@ -592,34 +592,8 @@
 	      </div>
 
 	      
-        <div id="Blogs" class="tabcontent">
-        	<B style="font-size: 3;color: black; text-align:center;">Title</B>
-        	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        	
-        </div>
-      <div id="Videos" class="tabcontent">
-             <?php
-                      $courseid = $_POST['content-id'];
-                      $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Video'";  
-                      $result = mysqli_query($Connection, $user_check_query); 
-                  
-              ?>       
-              <table class="table table-striped table-hover">
-      <?php 
-      while($row = mysqli_fetch_array($result)){
-        $tnail = $row['tnail'];
-        $desc = $row['description'];
-        $content = $row['content_name'];
-       ?>
-      <tr>
-      <td><img src="<?php echo $tnail; ?>"></td>
-      <td><?php echo $desc ?></td>
-
-      </tr>
-      <?php } ?>
-      </table>
-      </div>
+       
+     
 <div id="Blogs" class="tabcontent">
 	<header class="w3-container w3-red w3-center" style="padding:128px 16px; height: 200px">
   <h2 class="w3-margin w3-jumbo">TITLE</h2>

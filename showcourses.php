@@ -12,6 +12,50 @@
         $uname = $DataRow['uname'];
         $dob = $DataRow['dob'];
     }
+
+    $level ="";
+    $subject="";
+
+    if(isset($_POST["hindi1"])){
+        $level = 1;
+        $subject = "HINDI";
+    }
+    else if(isset($_POST["english1"])){
+        $level = 1;
+        $subject = "ENGLISH";
+    }
+    else if(isset($_POST["maths1"])){
+        $level = 1;
+        $subject = "MATHEMATICS";
+    }
+    else if(isset($_POST["science1"])){
+        $level = 1;
+        $subject = "SCIENCE";
+    }
+    else if(isset($_POST["sst1"])){
+        $level = 1;
+        $subject = "SOCIAL STUDIES";
+    }
+    else if(isset($_POST["hindi2"])){
+        $level = 2;
+        $subject = "HINDI";
+    }
+    else if(isset($_POST["english2"])){
+        $level = 2;
+        $subject = "ENGLISH";
+    }
+    else if(isset($_POST["maths2"])){
+        $level = 2;
+        $subject = "MATHEMATICS";
+    }
+    else if(isset($_POST["science2"])){
+        $level = 2;
+        $subject = "SCIENCE";
+    }
+    else if(isset($_POST["sst2"])){
+        $level = 2;
+        $subject = "SOCIAL STUDIES";
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -480,172 +524,41 @@
                 </div>
             </nav>
 
-            <div class="tab">
-                <button class="tablinks" onclick="openTab(event, 'Documents')">Documents</button>
-                <button class="tablinks" onclick="openTab(event, 'Images')">Images</button>
-                <button class="tablinks" onclick="openTab(event, 'Videos')">Videos</button>
-                <button class="tablinks" onclick="openTab(event, 'Blogs')">Blogs</button>
-            </div>
 
 
 
 
 
 
-            <div id="Documents" class="tabcontent">
+           
                <?php
-                        $courseid = $_POST['content-id'];
-                        $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Document'";  
+                        $user_check_query = "SELECT * FROM course WHERE level='$level' AND subject='$subject'";  
                         $result = mysqli_query($Connection, $user_check_query); 
                     
                 ?>       
-                <table class="table table-striped table-hover">
+                      <table class="table table-striped table-hover">
                 <?php 
                 while($row = mysqli_fetch_array($result)){
-                  $contentid = $row['content_id'];
-                  $tnail = $row['tnail'];
+                  $courseid = $row['course_id'];
+                  $tnail = $row['thumbnail'];
                   $desc = $row['description'];
-                  $content = $row['content_name'];
+                  $coursename = $row['course_name'];
                  ?>
                 <tr>
                 <td style="vertical-align: middle;"><img style="width: 150px; height: 150px;" src="<?php echo $tnail; ?>"></td>
-                <td><?php echo $desc ?></td>
+                <td><b><?php echo $coursename ?></b><br><?php echo $desc ?></td>
                 <td>
-                  <a target="_blank" rel="noopener noreferrer" href="<?php echo $content ?>" class="btn btn-info ">
-                          <span class="glyphicon glyphicon-eye-open"></span> View PDF
-                  </a>
-                </td>
-                <td>
-                  <form action="download.php" method="post" >
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-download-alt"></span> Download PDF</button>
-                    <input type="hidden" name="file" id="file" value="<?php echo $content ?>">
-                  </form>
-                </td>
-                <form action="listen.php" method="post" >
-                    <td><button class="btn btn-info"><span class="glyphicon glyphicon-volume-up"></span> Listen PDF</button>
-                    <input type="hidden" name="file" id="file" value="<?php echo $content ?>">
-                </form>
-                <form action="test.php" method="post" >
-                  <td><button class="btn btn-info"><span class="glyphicon glyphicon-education"></span> Take Test</button>
-                  <input type="hidden" name="id" id="id" value="<?php echo $contentid ?>">
-                </form>
-
+                    <form action="xyz.php" method="post">
+                            </div>
+                                <button type="submit" name="submit" class="btn btn-info">Start Course</button> 
+                                <input type="hidden" name="content-id" id="content-id" value="<?php echo $courseid; ?>">
+                            </div>
+                        </form>
                 </td>
                 </tr>
                 <?php } ?>
                 </table>
-        </div>
-
-
-            <div id="Images" class="tabcontent">
-                   <?php
-                            $courseid = $_POST['content-id'];
-                            $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Image'";  
-                            $result = mysqli_query($Connection, $user_check_query); 
-                        
-                    ?>       
-                    <table class="table table-striped table-hover">
-            <?php 
-            while($row = mysqli_fetch_array($result)){
-              $tnail = $row['tnail'];
-              $desc = $row['description'];
-              $content = $row['content_name'];
-             ?>
-            <tr>
-            <td><img src="<?php echo $content; ?>"></td>
-            <td><?php echo $desc ?></td>
-
-            <td>
-              <form action="download.php" method="post" >
-                <button class="btn btn-info"><span class="glyphicon glyphicon-download-alt"></span> Download Image</button>
-                <input type="hidden" name="file" id="file" value="<?php echo $content ?>">
-              </form>
-            </td>
-            </tr>
-            <?php } ?>
-            </table>
-            </div>
-
-
-
-          <div id="Videos" class="tabcontent">
-                 <?php
-                          $courseid = $_POST['content-id'];
-                          $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Video'";  
-                          $result = mysqli_query($Connection, $user_check_query); 
-                      
-                  ?>       
-                  <table class="table table-striped table-hover">
-          <?php 
-          while($row = mysqli_fetch_array($result)){
-            $tnail = $row['tnail'];
-            $desc = $row['description'];
-            $content = $row['content_name'];
-           ?>
-          <tr>
-          <td><img src="<?php echo $tnail; ?>"></td>
-          <td><?php echo $desc ?></td>
-
-          </tr>
-          <?php } ?>
-          </table>
-          </div>
-
-          
-        <div id="Blogs" class="tabcontent">
-            <B style="font-size: 3;color: black; text-align:center;">Title</B>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            
-        </div>
-<div id="Blogs" class="tabcontent">
-    <header class="w3-container w3-red w3-center" style="padding:128px 16px; height: 200px">
-  <h2 class="w3-margin w3-jumbo">TITLE</h2>
-</header>
-
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
-
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-  </div>
-</div>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-</p>
-    
-</div>
-
-
-      <script>
-          function openTab(evt, cityName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-              tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-              tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-          }
-      </script>
-                       
-        </div>
-    </div>
-
-    <div class="overlay"></div>
-
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
+                    
     
 </body>
 
