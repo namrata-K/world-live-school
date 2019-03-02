@@ -17,14 +17,6 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <title>Student</title>
     
@@ -509,7 +501,7 @@
                   $content = $row['content_name'];
                  ?>
                 <tr>
-                <td><img src="<?php echo $tnail; ?>"></td>
+                <td style="vertical-align: middle;"><img style="width: 150px; height: 150px;" src="<?php echo $tnail; ?>"></td>
                 <td><?php echo $desc ?></td>
                 <td>
                   <a target="_blank" rel="noopener noreferrer" href="<?php echo $content ?>" class="btn btn-info ">
@@ -569,28 +561,30 @@
 
 
 
-      <div id="Videos" class="tabcontent">
-             <?php
-                      $courseid = $_POST['content-id'];
-                      $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Video'";  
-                      $result = mysqli_query($Connection, $user_check_query); 
-                  
-              ?>       
-              <table class="table table-striped table-hover">
-      <?php 
-      while($row = mysqli_fetch_array($result)){
-        $tnail = $row['tnail'];
-        $desc = $row['description'];
-        $content = $row['content_name'];
-       ?>
-      <tr>
-      <td><img src="<?php echo $tnail; ?>"></td>
-      <td><?php echo $desc ?></td>
+	      <div id="Videos" class="tabcontent">
+	             <?php
+	                      $courseid = $_POST['content-id'];
+	                      $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Video'";  
+	                      $result = mysqli_query($Connection, $user_check_query); 
+	                  
+	              ?>       
+	              <table class="table table-striped table-hover">
+	      <?php 
+	      while($row = mysqli_fetch_array($result)){
+	        $tnail = $row['tnail'];
+	        $desc = $row['description'];
+	        $content = $row['content_name'];
+	       ?>
+	      <tr>
+	      <td><img src="<?php echo $tnail; ?>"></td>
+	      <td><?php echo $desc ?></td>
 
-      </tr>
-      <?php } ?>
-      </table>
-      </div>
+	      </tr>
+	      <?php } ?>
+	      </table>
+	      </div>
+
+	      
 
 
 
