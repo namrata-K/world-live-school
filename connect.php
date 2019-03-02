@@ -25,13 +25,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Connect</title>
+
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style3.css">
+    
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
@@ -482,15 +485,23 @@ input[type="button"]:hover
                   <img src="interaction.jpeg" class="img-responsive" alt="Cinque Terre" width="1290" height="700"> 
             </div>
 
-            <div class="container-fluid-new bg-white">
-                <div id="container">
-                    <p>Comment:</p>
-                    <form name="form1">
-                        <textarea rows="3" cols="40" name="text" placeholder="Enter your comment." onClick="select_area()"></textarea>
-                        <input type="button" value="Submit" onClick="validate_text();">
-                    </form>
-                </div>
-            </div>
+            <div class="container">
+   <form method="POST" id="comment_form">
+    <div class="form-group">
+     <input type="text" name="comment_name" id="comment_name" class="form-control" placeholder="Enter Name" />
+    </div>
+    <div class="form-group">
+     <textarea name="comment_content" id="comment_content" class="form-control" placeholder="Enter Comment" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+     <input type="hidden" name="comment_id" id="comment_id" value="0" />
+     <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" />
+    </div>
+   </form>
+   <span id="comment_message"></span>
+   <br />
+   <div id="display_comment"></div>
+  </div>
 
 
             <footer class="container-fluid-foot text-center">
@@ -505,7 +516,7 @@ input[type="button"]:hover
     <div class="overlay"></div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
@@ -553,54 +564,55 @@ input[type="button"]:hover
     }
     </script>
 
-                <script>
-
-var swear_words_arr=new Array("bloody","war","terror");
-
-var swear_alert_arr=new Array;
-var swear_alert_count=0;
-function reset_alert_count()
-{
- swear_alert_count=0;
-}
-function validate_text()
-{
- reset_alert_count();
- var compare_text=document.form1.text.value;
- for(var i=0; i<swear_words_arr.length; i++)
- {
-  for(var j=0; j<(compare_text.length); j++)
-  {
-   if(swear_words_arr[i]==compare_text.substring(j,(j+swear_words_arr[i].length)).toLowerCase())
-   {
-    swear_alert_arr[swear_alert_count]=compare_text.substring(j,(j+swear_words_arr[i].length));
-    swear_alert_count++;
-   }
-  }
- }
- var alert_text="";
- for(var k=1; k<=swear_alert_count; k++)
- {
-  alert_text+="\n" + "(" + k + ")  " + swear_alert_arr[k-1];
- }
- if(swear_alert_count>0)
- {
-  alert("The message will not be sent!!!\nThe following illegal words were found:\n_______________________________\n" + alert_text + "\n_______________________________");
-  document.form1.text.select();
- }
- else
- {
-  document.form1.submit();
- }
-}
-function select_area()
-{
- document.form1.text.select();
-}
-window.onload=reset_alert_count;
-            </script>
+                
 
 
 </body>
+<script>
+$(document).ready(function(){
+ 
+ $('#comment_form').on('submit', function(event){
+  event.preventDefault();
+  var form_data = $(this).serialize();
+  $.ajax({
+   url:"add_comment.php",
+   method:"POST",
+   data:form_data,
+   dataType:"JSON",
+   success:function(data)
+   {
+    if(data.error != '')
+    {
+     $('#comment_form')[0].reset();
+     $('#comment_message').html(data.error);
+     $('#comment_id').val('0');
+     load_comment();
+    }
+   }
+  })
+ });
+
+ load_comment();
+
+ function load_comment()
+ {
+  $.ajax({
+   url:"fetch_comment.php",
+   method:"POST",
+   success:function(data)
+   {
+    $('#display_comment').html(data);
+   }
+  })
+ }
+
+ $(document).on('click', '.reply', function(){
+  var comment_id = $(this).attr("id");
+  $('#comment_id').val(comment_id);
+  $('#comment_name').focus();
+ });
+ 
+});
+</script>
 
 </html>

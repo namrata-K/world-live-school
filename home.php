@@ -205,13 +205,13 @@
   </div>
 
     <body class="homepage">
-<div class="overlay"></div>
+<div class="overlay" style="width: 100%;"></div>
 
-<div class="outer-wrapper">
-<div class="page-wrapper">
+<div class="outer-wrapper" style="width: 100%;">
+<div class="page-wrapper" style="width: 100%;">
 
     <header class="navigation" id="top">
-        <div class="container">
+        <div class="container" style="width: 100%;">
            
             <!--/.secondary-nav-->
             <div class="main-nav">
@@ -221,9 +221,10 @@
 
                     <ul>
 
-                        <li><a href="#aboutus">About Us</a></li>
+                        <li><a  href="#aboutus">About Us</a></li>
                         <li><a href="#donate">Donate</a></li>
                         <li><a href="#services">Our Services</a></li>
+                       
                         <li><a href="#contact">Contact</a></li>
                        
                        <button class="b b1" onclick="location.href = 'login_main.html';">Login</button>
@@ -240,36 +241,35 @@
 
 <div class="outer-wrapper">
 <div class="page-wrapper">
-
-    <div class="hero-slider" style="height: 100px">
+<div class="hero-slider" style="min-height: 100px">
         <div class="rev-slider">
             <ul>
                <li>
-                   <img src="front.jpg" alt="">
+                   <img src="imgfr2.jpg" alt="">
                    <div class="tp-caption"
                         data-x="left" data-hoffset="0"
                         data-y="top" data-voffset="150"
                         data-transform_idle="o:1;"
-                        data-transform_in="x:50px;opacity:0;s:500;e:Power3.easeInOut;"
+                        data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
                         data-start="500">
                    </div>
                    <div class="tp-caption"
                         data-x="left" data-hoffset="0"
                         data-y="top" data-voffset="210"
                         data-transform_idle="o:1;"
-                        data-transform_in="x:50px;opacity:0;s:500;e:Power3.easeInOut;"
-                        data-start="600"><h1><br></h1>
+                        data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
+                        data-start="600">
                    </div>
                    <div class="tp-caption"
                         data-x="left" data-hoffset="0"
                         data-y="top" data-voffset="410"
                         data-transform_idle="o:1;"
-                        data-transform_in="x:50px;opacity:0;s:500;e:Power3.easeInOut;"
+                        data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
                         data-start="700">
                    </div>
                </li>
                 <li>
-                    <img src="front1.jpg" alt="">
+                    <img src="imgfr3.jpg" alt="">
                     <div class="tp-caption"
                          data-x="left" data-hoffset="0"
                          data-y="top" data-voffset="150"
@@ -282,7 +282,7 @@
                          data-y="top" data-voffset="210"
                          data-transform_idle="o:1;"
                          data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                         data-start="600"><h1 class="text-color-white">The Era<br>Of Digital Education</h1>
+                         data-start="600">
                     </div>
                     <div class="tp-caption"
                          data-x="left" data-hoffset="0"
@@ -293,7 +293,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="front2.jpg" alt="">
+                    <img src="imgfr4.jpg" alt="">
                     <div class="tp-caption"
                          data-x="left" data-hoffset="0"
                          data-y="top" data-voffset="150"
@@ -306,7 +306,7 @@
                          data-y="top" data-voffset="210"
                          data-transform_idle="o:1;"
                          data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                         data-start="600"><h1 class="text-color-white">Digital Education<br>Spreading Smiles Worldwide</h1>
+                         data-start="600">
                     </div>
                     <div class="tp-caption"
                          data-x="left" data-hoffset="0"
@@ -319,7 +319,6 @@
             </ul>
         </div>
     </div>
-    <!--/.hero-slider-->
 </div>
 </div>
 
@@ -336,8 +335,8 @@
 <div class="container-fluid bg-3 text-center">    
   <h3 class="margin" size="2px">SUCCESS STORIES</h3><br>
   <div class="row">
-    <div class="col-sm-4">
-      <img src="orphan.jpg" height="50%" ; width="50%">
+    <div class="col-sm-4" style="border-top: 20%">
+      <img src="author.jpg" height="20%" ; width="40%">
       <p align="left">Ms Savita Gupta</p>
 <p align="left">Shalimar Bagh, Delhi</p>
 <p align="left">Housewife</p>
@@ -347,7 +346,7 @@
       
     </div>
     <div class="col-sm-4"> 
-      <img src="orphan.jpg" height="50%" ; width="50%">
+      <img src="story.jpg" height="50%" ; width="50%">
 
       <p align="left">Prof. Sunil Sharma</p> 
 <p align="left">Kashmere Gate, Delhi</p>
@@ -398,19 +397,19 @@
     <div class="col-sm-4">
     <img src="class.png" height="20%" width=20%>
     <B align="center"><font size="5">Virtual Classroom</B> 
-<p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all marterials. 
+<p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all materials. 
 </p>
   </div>
   <div class="col-sm-4">
     <img src="tts.jpg" height="20%" width=20%>
     <B align="center"><font size="5">Text to Speech</B> 
-<p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all marterials. 
+<p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all materials. 
 </p>
   </div>
 <div class="col-sm-4">
     <img src="people.jpg" height="20%" width=20%>
     <B align="center"><font size="5">Network Building</B> 
-<p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all marterials. 
+<p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all materials. 
 </p>
   </div>
 
@@ -426,9 +425,8 @@
     <img src="twitter.png" height=3% width=3%>
     <img src="insta.png" height=3% width=3%>
     <img src="f.png" height=3% width=3%>
+     <h3 class="margin" style="margin-left: 87%;color:  #2f2f2f">Language</h3>
   </div>
-
-
   
 </footer>
 
