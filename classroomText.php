@@ -746,121 +746,56 @@ h1 {
 
     <div class="wrapper">
         <!-- Sidebar  -->
-        <nav style="background-color: white; border-color: white" id="sidebar">
-
+        <nav id="sidebar" style="background-color: #FF8000; border-color: #FF8000">
             <div id="dismiss">
-                <i style="background-color:white; border-color: white" class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-left"></i>
             </div>
 
-            <div style="background-color:white; border-color: white" class="sidebar-header">
-                <section class="wrap-whole">
-            
-            <section class="vertical-nav-bar">
-                
-                <div class="dropdown">
-  <button class="dropbtn button1 active">LEVEL 1</button>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#lv1menu" data-toggle="collapse" aria-expanded="false">Level 1</a>
+                    <ul class="collapse list-unstyled" id="lv1menu">
+                        <li>
+                            <a href="#">Hindi</a>
+                        </li>
+                        <li>
+                            <a href="#">Engkish 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Mathematics</a>
+                        </li>
+                        <li>
+                            <a href="#">Science</a>
+                        </li>
+                        <li>
+                            <a href="#">Social Studies</a>
+                        </li>
+                    </ul>
+                </li>
 
-  <div class="dropdown-content">
-    <a href="#">MATHEMATICS</a>
-    <a href="#">SCIENCE</a>
-    <a href="#">ENGLISH</a>
-    <a href="#">HINDI</a>
-    <a href="#">ACCOUNTS</a>
-  </div>
-</div>
-        
-        <div class="dropdown">
-  <button class="dropbtn button1">LEVEL 2</button>
-
-  <div class="dropdown-content">
-    <a href="#">MATHEMATICS</a>
-    <a href="#">SCIENCE</a>
-    <a href="#">ENGLISH</a>
-    <a href="#">HINDI</a>
-    <a href="#">ACCOUNTS</a>
-  </div>
-</div>
-        
-        <div class="dropdown">
-  <button class="dropbtn button1">LEVEL 3</button>
-
-  <div class="dropdown-content">
-    <a href="#">MATHEMATICS</a>
-    <a href="#">SCIENCE</a>
-    <a href="#">ENGLISH</a>
-    <a href="#">HINDI</a>
-    <a href="#">ACCOUNTS</a>
-  </div>
-</div>
-        
-        <div class="dropdown">
-  <button class="dropbtn button1">LEVEL 4</button>
-
-  <div class="dropdown-content">
-    <a href="#">MATHEMATICS</a>
-    <a href="#">SCIENCE</a>
-    <a href="#">ENGLISH</a>
-    <a href="#">HINDI</a>
-    <a href="#">ACCOUNTS</a>
-  </div>
-</div>
-        
-        <div class="dropdown">
-  <button class="dropbtn button1">LEVEL 5</button>
-
-  <div class="dropdown-content">
-    <a href="#">MATHEMATICS</a>
-    <a href="#">SCIENCE</a>
-    <a href="#">ENGLISH</a>
-    <a href="#">HINDI</a>
-    <a href="#">ACCOUNTS</a>
-  </div>
-</div>
-        
-        <div class="dropdown">
-  <button class="dropbtn button1">LEVEL 6</button>
-
-  <div class="dropdown-content">
-    <a href="#">MATHEMATICS</a>
-    <a href="#">SCIENCE</a>
-    <a href="#">ENGLISH</a>
-    <a href="#">HINDI</a>
-    <a href="#">ACCOUNTS</a>
-  </div>
-</div>
-        
-        <div class="dropdown">
-  <button class="dropbtn button1">LEVEL 7</button>
-
-  <div class="dropdown-content">
-    <a href="#">MATHEMATICS</a>
-    <a href="#">SCIENCE</a>
-    <a href="#">ENGLISH</a>
-    <a href="#">HINDI</a>
-    <a href="#">ACCOUNTS</a>
-  </div>
-</div>
-        
-        <div class="dropdown">
-  <button class="dropbtn button1">LEVEL 8</button>
-
-  <div class="dropdown-content">
-    <a href="#">MATHEMATICS</a>
-    <a href="#">SCIENCE</a>
-    <a href="#">ENGLISH</a>
-    <a href="#">HINDI</a>
-    <a href="#">ACCOUNTS</a>
-  </div>
-</div>
-            
-            </section>
-
-            </div>
-
-           
-
-            
+                <li class="active">
+                    <a href="#lv2menu" data-toggle="collapse" aria-expanded="false">Level 2</a>
+                    <ul class="collapse list-unstyled" id="lv2menu">
+                        <li>
+                            <a href="#">Hindi</a>
+                        </li>
+                        <li>
+                            <a href="#">Engkish 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Mathematics</a>
+                        </li>
+                        <li>
+                            <a href="#">Science</a>
+                        </li>
+                        <li>
+                            <a href="#">Social Studies</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
+       
 
         <!-- Page Content  -->
         <div id="content">
@@ -914,30 +849,27 @@ h1 {
                 <section>
                     <article class="container__content">
                      <table style="width:100%">
-  <tr>
-    <th style="padding: 10%">Firstname</th>
-    <th style="padding: 10%" >Lastname</th> 
-    <th style="padding: 10%">Age</th>
-  </tr>
-  <tr>
-    <td style="padding: 10%">Jill</td>
-    <td style="padding: 10%">Smith</td>
-    <td style="padding: 10%">50</td>
-  </tr>
-  <tr>
-    <td style="padding: 10%">Eve</td>
-    <td style="padding: 10%">Jackson</td>
-    <td style="padding: 10%">94</td>
-  </tr>
-  <tr>
-    <td style="padding: 10%">John</td>
-    <td style="padding: 10%">Doe</td>
-    <td style="padding: 10%">80</td>
-  </tr>
-</table>
-
-                      
-                       
+                          <tr>
+                            <th style="padding: 10%">Firstname</th>
+                            <th style="padding: 10%" >Lastname</th> 
+                            <th style="padding: 10%">Age</th>
+                          </tr>
+                          <tr>
+                            <td style="padding: 10%">Jill</td>
+                            <td style="padding: 10%">Smith</td>
+                            <td style="padding: 10%">50</td>
+                          </tr>
+                          <tr>
+                            <td style="padding: 10%">Eve</td>
+                            <td style="padding: 10%">Jackson</td>
+                            <td style="padding: 10%">94</td>
+                          </tr>
+                          <tr>
+                            <td style="padding: 10%">John</td>
+                            <td style="padding: 10%">Doe</td>
+                            <td style="padding: 10%">80</td>
+                          </tr>
+                        </table>
                     </article>
                 </section>
             </section>
