@@ -497,11 +497,6 @@
                 <button class="tablinks" onclick="openTab(event, 'Blogs')">Blogs</button>
             </div>
 
-
-
-
-
-
             <div id="Documents" class="tabcontent">
                <?php
                         $courseid = $_POST['content-id'];
@@ -557,6 +552,7 @@
                     <table class="table table-striped table-hover">
             <?php 
             while($row = mysqli_fetch_array($result)){
+
               $tnail = $row['tnail'];
               $desc = $row['description'];
               $content = $row['content_name'];
@@ -570,6 +566,12 @@
                 <button class="btn btn-info"><span class="glyphicon glyphicon-download-alt"></span> Download Image</button>
                 <input type="hidden" name="file" id="file" value="<?php echo $content ?>">
               </form>
+            </td>
+            <td>
+            <form action="test.php" method="post" >
+                  <td><button class="btn btn-info"><span class="glyphicon glyphicon-education"></span> Take Test</button>
+                  <input type="hidden" name="id" id="id" value="<?php echo $contentid ?>">
+            </form>
             </td>
             </tr>
             <?php } ?>
@@ -593,9 +595,16 @@
 	        $content = $row['content_name'];
 	       ?>
 	      <tr>
-	      <td><img src="<?php echo $tnail; ?>"></td>
+	      <td><video width="320" height="240" controls>
+            <source src="<?php echo $content; ?>" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+          </td>
 	      <td><?php echo $desc ?></td>
-
+          <td><form action="test.php" method="post" >
+                  <td><button class="btn btn-info"><span class="glyphicon glyphicon-education"></span> Take Test</button>
+                  <input type="hidden" name="id" id="id" value="<?php echo $contentid ?>">
+            </form></td>
 	      </tr>
 	      <?php } ?>
 	      </table>
@@ -614,6 +623,17 @@
   <div class="w3-content">
       
       <p class="w3-text-grey"><?php echo $blog_desc; ?></p>
+      <?php $desc = urlencode($desc);
+  $lang = urldecode("en");
+  $file  =  md5($desc) .".mp3";
+  if (!file_exists($file) || filesize($file) == 0) {
+         $mp3 = file_get_contents('http://translate.google.com/translate_tts?ie=UTF-8&q='.$desc .'&tl='. $lang .'&client=tw-ob');
+    }
+    ?>
+<audio controls>
+  <source src="<?php echo $file; ?>" type="audio/mp3">
+  <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+</audio>
 
   </div>
 </div>
