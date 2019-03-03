@@ -768,5 +768,17 @@ input[type="button"]:hover
     </script>
 
 </body>
+<script>
+    Weglot.setup({
 
+      api_key: 'wg_02d8b91a1274c5774c7dc11ae2db765b8',
+      
+      originalLanguage: 'en',
+
+      destinationLanguages : 'fr,es,hi',
+
+      styleOpt : { fullname: true , withname: true , is_dropdown: true , classF: "wg-flags flag-3" },
+     });
+
+</script>
 </html>

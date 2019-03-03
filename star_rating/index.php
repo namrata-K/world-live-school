@@ -48,7 +48,6 @@ p.text-address {
 
 <body onload="showRestaurantData('getRatingData.php')">
     <div class="container">
-        <h2>Star Rating System using PHP and Javascript</h2>
         <span id="restaurant_list"></span>
     </div>
 </body>

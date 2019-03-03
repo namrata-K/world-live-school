@@ -3,7 +3,7 @@
 function userRating($userId, $restaurantId, $conn)
 {
     $average = 0;
-    $avgQuery = "SELECT rating FROM tbl_rating WHERE user_id = '" . $userId . "' and restaurant_id = '" . $restaurantId . "'";
+    $avgQuery = "SELECT rating FROM tbl_rating WHERE user_id = '" . $userId . "' and restaurant_id = '" . $restaurantId . "' ORDER BY rating DESC";
     $total_row = 0;
     
     if ($result = mysqli_query($conn, $avgQuery)) {

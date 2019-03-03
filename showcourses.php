@@ -557,11 +557,6 @@
                     </div>
                 </div>
             </nav>
-        </div>
-    </div>
-    <div class="overlay"></div>
-
-
 
            
                <?php
@@ -569,7 +564,7 @@
                         $result = mysqli_query($Connection, $user_check_query); 
                     
                 ?>       
-                      <table class="table table-striped table-hover">
+                <table class="table table-striped table-hover">
                 <?php 
                 while($row = mysqli_fetch_array($result)){
                   $courseid = $row['course_id'];
@@ -591,8 +586,9 @@
                 </tr>
                 <?php } ?>
                 </table>
-                    
-    
+            </div>
+        </div>
+    <div class="overlay"></div>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 require_once ('db.php');
 // Here the user id is harcoded.
 // You can integrate your authentication code here to get the logged in user id
-$userId = 2;
+$userId = 1;
 
 if (isset($_POST["index"], $_POST["restaurant_id"])) {
     
