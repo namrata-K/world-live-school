@@ -48,6 +48,28 @@
         background: #fafafa;
     }
 
+    input[type="button"]
+{
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 8px;
+    color: #000;
+    display: table;
+    font-size: 16px;
+    margin: 0 auto;
+    padding: 5px 8px;
+    width: 175px;
+}
+
+input[type="button"]:hover
+{
+    background-color: #666;
+    background-image: none;
+    color: #fff;
+    display: table;
+    font-size: 16px;
+}
     p {
         font-family: 'Poppins', sans-serif;
         font-size: 1.1em;
@@ -488,7 +510,7 @@
       <div class="modal-content" >
         <!-- Modal body -->
         <div class="modal-body">
-         <form action="blog.php" method="POST" enctype="multipart/form-data">
+         <form name="form1" action="blog.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="courseID" style="color: black;">Course ID</label>
                 <input type="number" class="form-control" id="c_id" name="c_id" aria-describedby="name" placeholder="Enter Course ID">
@@ -498,13 +520,14 @@
                 <input type="text" class="form-control" id="title" name="title" aria-describedby="name" placeholder="Title">
             </div>
             <div class="form-group">
-                <label for="description" style="color: black;">Description</label>
-                <input type="text" class="form-control" id="desc" name="desc" aria-describedby="name" placeholder="Write your content here">
+                <label for="description" style="color: black;">Content</label>
+                <textarea rows="7" class="form-control" id="desc" name="desc" aria-describedby="name" placeholder="Write your content here" onClick="select_area()"></textarea>
             </div>
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="submit" class="btn btn-danger" name="random_course">Upload now</button> 
+    <button type="submit" class="btn btn-danger" name="random_course" onClick="validate_text();">Upload now</button> 
+      
       </form>
         </div>
       </div>
@@ -687,7 +710,52 @@
             });
         });
     </script>
+    <script>
 
+var swear_words_arr=new Array("bloody","war","terror");
+
+var swear_alert_arr=new Array;
+var swear_alert_count=0;
+function reset_alert_count()
+{
+ swear_alert_count=0;
+}
+function validate_text()
+{
+ reset_alert_count();
+ var compare_text=document.form1.text.value;
+ for(var i=0; i<swear_words_arr.length; i++)
+ {
+  for(var j=0; j<(compare_text.length); j++)
+  {
+   if(swear_words_arr[i]==compare_text.substring(j,(j+swear_words_arr[i].length)).toLowerCase())
+   {
+    swear_alert_arr[swear_alert_count]=compare_text.substring(j,(j+swear_words_arr[i].length));
+    swear_alert_count++;
+   }
+  }
+ }
+ var alert_text="";
+ for(var k=1; k<=swear_alert_count; k++)
+ {
+  alert_text+="\n" + "(" + k + ")  " + swear_alert_arr[k-1];
+ }
+ if(swear_alert_count>0)
+ {
+  alert("The message will not be sent!!!\nThe following illegal words were found:\n_______________________________\n" + alert_text + "\n_______________________________");
+  document.form1.text.select();
+ }
+ else
+ {
+  document.form1.submit();
+ }
+}
+function select_area()
+{
+ document.form1.text.select();
+}
+window.onload=reset_alert_count;
+            </script>
 </body>
 
 </html>
