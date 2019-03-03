@@ -14,7 +14,7 @@
   }
   else
   {
-  	$query= "INSERT INTO blog(course_id, title, description) VALUES('c_id', '$title','$desc')";
+  	$query= "INSERT INTO blog(course_id, title, description) VALUES('$c_id', '$title','$desc')";
   }
   $Execute = mysqli_query($Connection, $query);
   if($Execute)
@@ -25,4 +25,5 @@
                      </script>
                      <?php
   }
+  
 ?>

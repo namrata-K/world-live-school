@@ -1,6 +1,6 @@
 <?php
     $Connection = mysqli_connect('localhost', 'root', '');
-    $Selected = mysqli_select_db($Connection, 'phpsamples');
+    $Selected = mysqli_select_db($Connection, 'live_school');
     $query = "SELECT id, content,post_date FROM todo";
     $result = mysqli_query($Connection, $query);
     if (!$result) {

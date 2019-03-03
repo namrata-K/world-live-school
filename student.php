@@ -360,8 +360,6 @@
                     </button>
 
                     <img class="img-responsive" src="ecolelogo.png" style="height: 10%; width: 10%">
-
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
@@ -419,10 +417,7 @@
             ?>    
                </tr>
                </table>
-
-
             <h2 class="text-center mb-3">Intermediate Courses</h2>
-                     
                       <?php
 
                 $user_check_query = "SELECT * FROM course";  
@@ -502,7 +497,7 @@
 
 
 			<div class="container-fluid">
-			  <h1 class="text-center mb-3">Bootstrap Multi-Card Carousel</h1>
+			  <h1 class="text-center mb-3">Recommended for you</h1>
 			  <div id="myCarousel" class="carousel slide" data-ride="carousel">
 			    <div class="carousel-inner row w-100 mx-auto">
 			      <div class="carousel-item col-md-4 active">

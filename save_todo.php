@@ -1,6 +1,6 @@
 <?php
     $Connection = mysqli_connect('localhost', 'root', '');
-    $Selected = mysqli_select_db($Connection, 'phpsamples');
+    $Selected = mysqli_select_db($Connection, 'live_school');
     $todo = mysqli_real_escape_string($Connection, trim($_POST['todo']));
     $date = date('Y-m-d');
 

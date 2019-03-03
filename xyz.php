@@ -12,20 +12,27 @@
         $uname = $DataRow['uname'];
         $dob = $DataRow['dob'];
     }
+     $courseid = $_POST['content-id'];
+    $blog_query = "SELECT * from blog where course_id='$courseid' "; 
+    $Execute = mysqli_query($Connection, $blog_query); 
+    $DataRow = mysqli_fetch_array($Execute);
+    if($DataRow)
+    {   
+        $title = $DataRow['title'];
+        $blog_desc = $DataRow['description'];
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-<<<<<<< HEAD
-=======
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
->>>>>>> e8e1bf810e867c499a34a3a85261f3306ebb7fd4
 
     <title>Student</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -484,18 +491,13 @@
             </nav>
 
             <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'Documents')">Documents</button>
-        <button class="tablinks" onclick="openTab(event, 'Images')">Images</button>
-        <button class="tablinks" onclick="openTab(event, 'Videos')">Videos</button>
-              <button class="tablinks" onclick="openTab(event, 'Blogs')">Blogs</button>
-      </div>
+                <button class="tablinks" onclick="openTab(event, 'Documents')">Documents</button>
+                <button class="tablinks" onclick="openTab(event, 'Images')">Images</button>
+                <button class="tablinks" onclick="openTab(event, 'Videos')">Videos</button>
+                <button class="tablinks" onclick="openTab(event, 'Blogs')">Blogs</button>
+            </div>
 
-
-
-
-
-
-      <div id="Documents" class="tabcontent">
+            <div id="Documents" class="tabcontent">
                <?php
                         $courseid = $_POST['content-id'];
                         $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Document'";  
@@ -550,6 +552,7 @@
                     <table class="table table-striped table-hover">
             <?php 
             while($row = mysqli_fetch_array($result)){
+
               $tnail = $row['tnail'];
               $desc = $row['description'];
               $content = $row['content_name'];
@@ -563,6 +566,12 @@
                 <button class="btn btn-info"><span class="glyphicon glyphicon-download-alt"></span> Download Image</button>
                 <input type="hidden" name="file" id="file" value="<?php echo $content ?>">
               </form>
+            </td>
+            <td>
+            <form action="test.php" method="post" >
+                  <td><button class="btn btn-info"><span class="glyphicon glyphicon-education"></span> Take Test</button>
+                  <input type="hidden" name="id" id="id" value="<?php echo $contentid ?>">
+            </form>
             </td>
             </tr>
             <?php } ?>
@@ -586,65 +595,49 @@
 	        $content = $row['content_name'];
 	       ?>
 	      <tr>
-	      <td><img src="<?php echo $tnail; ?>"></td>
+	      <td><video width="320" height="240" controls>
+            <source src="<?php echo $content; ?>" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+          </td>
 	      <td><?php echo $desc ?></td>
-
+          <td><form action="test.php" method="post" >
+                  <td><button class="btn btn-info"><span class="glyphicon glyphicon-education"></span> Take Test</button>
+                  <input type="hidden" name="id" id="id" value="<?php echo $contentid ?>">
+            </form></td>
 	      </tr>
 	      <?php } ?>
 	      </table>
 	      </div>
 
 	      
-      <div id="Videos" class="tabcontent">
-             <?php
-                      $courseid = $_POST['content-id'];
-                      $user_check_query = "SELECT * FROM content WHERE course_id='$courseid' AND content_type='Video'";  
-                      $result = mysqli_query($Connection, $user_check_query); 
-                  
-              ?>       
-              <table class="table table-striped table-hover">
-      <?php 
-      while($row = mysqli_fetch_array($result)){
-        $tnail = $row['tnail'];
-        $desc = $row['description'];
-        $content = $row['content_name'];
-       ?>
-      <tr>
-      <td><img src="<?php echo $tnail; ?>"></td>
-      <td><?php echo $desc ?></td>
-
-      </tr>
-      <?php } ?>
-      </table>
-      </div>
+       
+     
 <div id="Blogs" class="tabcontent">
 	<header class="w3-container w3-red w3-center" style="padding:128px 16px; height: 200px">
-  <h2 class="w3-margin w3-jumbo">TITLE</h2>
+  <h2 class="w3-margin w3-jumbo"><?php echo $title; ?></h2>
 </header>
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
-
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
+      
+      <p class="w3-text-grey"><?php echo $blog_desc; ?></p>
+      <?php $desc = urlencode($desc);
+  $lang = urldecode("en");
+  $file  =  md5($desc) .".mp3";
+  if (!file_exists($file) || filesize($file) == 0) {
+         $mp3 = file_get_contents('http://translate.google.com/translate_tts?ie=UTF-8&q='.$desc .'&tl='. $lang .'&client=tw-ob');
+    }
+    ?>
+<audio controls>
+  <source src="<?php echo $file; ?>" type="audio/mp3">
+  <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+</audio>
 
   </div>
 </div>
-
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-</p>
-	
 </div>
-
-
-
-
 
       <script>
           function openTab(evt, cityName) {
