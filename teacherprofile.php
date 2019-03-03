@@ -40,7 +40,9 @@
     <style type="text/css">
         /*
     DEMO STYLE
-*/
+*/  .speech {border: 1px solid #DDD; width: 300px; padding: 0; margin: 0}
+  .speech input {border: 0; width: 240px; display: inline-block; height: 30px;}
+  .speech img {float: right; width: 40px }
 
     @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
     body {
@@ -505,7 +507,20 @@ input[type="button"]:hover
   </div>
 <!-- end of modal -->
 
-<div class="modal fade" id="bmodal" style="height: 100%;overflow-y: auto;">
+
+ <div class="modal fade" id="bmodal">
+    <div class="modal-dialog">
+      <div class="modal-content">       
+        <!-- Modal body -->
+        <div class="modal-body">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" name="urc" data-toggle="modal" data-target="#typeblog">Type the blog content</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" name="ucc" data-toggle="modal" data-target="#speakblog">Speak your content instead</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="typeblog" style="height: 100%;overflow-y: auto;">
     <div class="modal-dialog" >
       <div class="modal-content" >
         <!-- Modal body -->
@@ -526,7 +541,7 @@ input[type="button"]:hover
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
-    <button type="submit" class="btn btn-danger" name="random_course" onClick="validate_text();">Upload now</button> 
+    <button type="submit" class="btn btn-danger" name="random_course" >Upload now</button> 
       
       </form>
         </div>
@@ -534,6 +549,47 @@ input[type="button"]:hover
     </div>
   </div>
 <!-- end of modal -->
+
+<div class="modal fade" id="speakblog">
+    <div class="modal-dialog">
+      <div class="modal-content">       
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form id="labnol" method="post" action="speechtotext.php">
+              <div class="speech">
+                <input type="text" name="q" id="transcript" placeholder="Speak" />
+                <img onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
+              </div>
+            </form>
+            <script>
+  function startDictation() {
+
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = "en-US";
+      recognition.start();
+      recognition.onresult = function(e) {
+        document.getElementById('transcript').value
+                                 = e.results[0][0].transcript;
+        recognition.stop();
+        document.getElementById('labnol').submit();
+      };
+
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+   }
+  }
+</script>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <!-- modal for classroom existing course -->
@@ -710,52 +766,7 @@ input[type="button"]:hover
             });
         });
     </script>
-    <script>
 
-var swear_words_arr=new Array("bloody","war","terror");
-
-var swear_alert_arr=new Array;
-var swear_alert_count=0;
-function reset_alert_count()
-{
- swear_alert_count=0;
-}
-function validate_text()
-{
- reset_alert_count();
- var compare_text=document.form1.text.value;
- for(var i=0; i<swear_words_arr.length; i++)
- {
-  for(var j=0; j<(compare_text.length); j++)
-  {
-   if(swear_words_arr[i]==compare_text.substring(j,(j+swear_words_arr[i].length)).toLowerCase())
-   {
-    swear_alert_arr[swear_alert_count]=compare_text.substring(j,(j+swear_words_arr[i].length));
-    swear_alert_count++;
-   }
-  }
- }
- var alert_text="";
- for(var k=1; k<=swear_alert_count; k++)
- {
-  alert_text+="\n" + "(" + k + ")  " + swear_alert_arr[k-1];
- }
- if(swear_alert_count>0)
- {
-  alert("The message will not be sent!!!\nThe following illegal words were found:\n_______________________________\n" + alert_text + "\n_______________________________");
-  document.form1.text.select();
- }
- else
- {
-  document.form1.submit();
- }
-}
-function select_area()
-{
- document.form1.text.select();
-}
-window.onload=reset_alert_count;
-            </script>
 </body>
 
 </html>
