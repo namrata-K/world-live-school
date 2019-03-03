@@ -430,7 +430,7 @@
            
             <!--/.secondary-nav-->
             <div class="main-nav">
-                <div class="brand"><img src="ecolelogo.png" alt="Ecole" height="50%" width="50%"></a></div><!--/.brand-->
+                <div class="brand"><img src="ecolelogo.png" alt="Ecole" height="50%" width="25%"></a></div>
                
                 <nav>
 
@@ -548,40 +548,52 @@
 </div>
 
 <!-- Third Container (Grid) -->
-<div class="container-fluid bg-3 text-center">    
-  <h3 class="margin" size="2px">SUCCESS STORIES</h3><br>
-  <div class="row">
-    <div class="col-sm-4" style="border-top: 20%">
-      <img src="author.jpg" height="20%" ; width="40%">
-      <p align="left">Ms Savita Gupta</p>
-<p align="left">Shalimar Bagh, Delhi</p>
-<p align="left">Housewife</p>
-<p align="left">After I heard about this initiative, I have been telling my friends that ecole is the best way to impart our knowledge to the one's who need it to change their lives. 
-
-</p>
-      
-    </div>
-    <div class="col-sm-4"> 
-      <img src="story.jpg" height="50%" ; width="50%">
-
-      <p align="left">Prof. Sunil Sharma</p> 
-<p align="left">Kashmere Gate, Delhi</p>
-<p align="left">Retired Math Professor</p>
-<p align="left">After my retirement I have a lot of time on my hands. ecole looks promising to people like me across the globe.Looking forward to use this website.  
-
-</p>
-      
-    </div>
-    <div class="col-sm-4"> 
-      <img src="orphan.jpg" height="50%" ; width="50%">
-      <p align="left">Rajni</p> 
-<p align="left">Rohini sector-8, Delhi</p>
-<p align="left">Orphan at Nishulk Shiksha Sansthan</p>
-<p align="left">I would learn dance and music. i am also goo at maths. We have 10 computers and we use them to play games sometimes. I want to come first in whatever I do.</p>
-      
-    </div>
-  </div>
-</div>
+<center>
+	<div class="container-fluid bg-3 text-center">    
+	  <h3 class="margin" size="2px">SUCCESS STORIES</h3><br>
+	  <div class="row">
+	    <div class="col-sm-4" style="border-top: 20%">
+	    	<center>
+		    	<div class="card" style="width: 50rem;">
+				  <img style="height: 250px; width: 500px" class="card-img-top" src="author.jpg" alt="Card image cap">
+				  <div class="card-body">
+				  	<blockquote>
+					    <p>After I heard about this initiative, I have been telling my friends that ecole is the best way to impart our knowledge to the one's who need it to change their lives.</p>
+					    <footer>Ms Savita Gupta. <br> Shalimar Bagh, Delhi. <br> Housewife</footer>
+					  </blockquote>
+				  </div>
+				</div>
+			</center>
+	    </div>
+	    <div class="col-sm-4"> 
+	    	<center>
+		    	<div class="card" style="width: 50rem;">
+				  <img style="height: 250px; width: 500px" class="card-img-top" src="story.jpg" alt="Card image cap">
+				  <div class="card-body">
+				  	<blockquote>
+					    <p>After my retirement I have a lot of time on my hands. ecole looks promising to people like me across the globe.Looking forward to use this website.</p>
+					    <footer> Prof. Sunil Sharma. <br> Kashmere Gate, Delhi. <br> Retired Math Professor.</footer>
+					</blockquote>
+				  </div>
+				</div>
+			</center>
+	    </div>
+	    <div class="col-sm-4"> 
+	    	<center>
+		    	<div class="card" style="width: 50rem;">
+				  <img style="height: 250px; width: 500px" class="card-img-top" src="orphan.jpg" alt="Card image cap">
+				  <div class="card-body">
+				  	<blockquote>
+					    <p>I would learn dance and music. i am also goo at maths. We have 10 computers and we use them to play games sometimes. I want to come first in whatever I do.</p>
+					    <footer> Rajni. <br> Rohini sector-8, Delhi. <br> Orphan at Nishulk Shiksha Sansthan. </footer>
+					</blockquote>
+				  </div>
+				</div>
+			</center>
+	    </div>
+	  </div>
+	</div>
+</center>
 
  <div class="container-fluid bg-2">
   <center>
