@@ -21,6 +21,9 @@
         $title = $DataRow['title'];
         $blog_desc = $DataRow['description'];
     }
+    $query = "INSERT INTO previously_watched(student_id, content_id) VALUES('$id', '$courseid')";
+    $Execute = mysqli_query($Connection, $query);
+     
 
 ?>
 <!DOCTYPE html>
