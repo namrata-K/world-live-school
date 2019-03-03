@@ -626,12 +626,16 @@
   <div class="w3-content">
       
       <p class="w3-text-grey"><?php echo $blog_desc; ?></p>
-      <?php $desc = urlencode($desc);
+      <?php 
+      $blog_desc = urlencode($blog_desc);
   $lang = urldecode("en");
-  $file  =  md5($desc) .".mp3";
+  $file  =  md5($blog_desc) .".mp3";
   if (!file_exists($file) || filesize($file) == 0) {
-         $mp3 = file_get_contents('http://translate.google.com/translate_tts?ie=UTF-8&q='.$desc .'&tl='. $lang .'&client=tw-ob');
-    }
+         $mp3 = file_get_contents('http://translate.google.com/translate_tts?ie=UTF-8&q='.$blog_desc .'&tl='. $lang .'&client=tw-ob');
+    file_put_contents($file, $mp3);
+            }
+    
+
     ?>
 <audio controls>
   <source src="<?php echo $file; ?>" type="audio/mp3">
