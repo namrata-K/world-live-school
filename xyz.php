@@ -21,9 +21,6 @@
         $title = $DataRow['title'];
         $blog_desc = $DataRow['description'];
     }
-    $query = "INSERT INTO previously_watched(student_id, content_id) VALUES('$id', '$courseid')";
-    $Execute = mysqli_query($Connection, $query);
-     
 
 ?>
 <!DOCTYPE html>
@@ -633,8 +630,8 @@
   if (!file_exists($file) || filesize($file) == 0) {
          $mp3 = file_get_contents('http://translate.google.com/translate_tts?ie=UTF-8&q='.$blog_desc .'&tl='. $lang .'&client=tw-ob');
     file_put_contents($file, $mp3);
-            }
-    
+     
+    }
 
     ?>
 <audio controls>

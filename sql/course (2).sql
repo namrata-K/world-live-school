@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2019 at 08:51 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Generation Time: Mar 03, 2019 at 09:12 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -45,21 +45,12 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`course_id`, `course_name`, `thumbnail`, `level`, `subject`, `teacher_id`, `rating`, `upload_time`, `description`) VALUES
-(1, 'test', 'a.png', 0, 'NA', 4, 0, '2019-02-27 06:55:28', 'testing...'),
-(2, 'Test', 'a.png', 0, 'NA', 4, 0, '2019-02-27 06:57:46', 'testing...'),
-(3, 'Test', '', 0, 'NA', 4, 0, '2019-02-27 06:58:51', 'testing...'),
-(4, 'Test', '', 0, 'NA', 4, 0, '2019-02-27 06:58:51', 'testing...'),
-(5, 'Test', 'b.png', 0, 'NA', 4, 0, '2019-02-27 06:59:29', 'testing...'),
-(6, 'Test', 'c.png', 0, 'NA', 4, 0, '2019-02-27 07:00:00', 'testing...'),
-(7, 'Test', 'b.png', 0, 'NA', 4, 0, '2019-02-27 07:00:32', 'testing...'),
-(8, 't', '', 0, 'NA', 4, 0, '2019-02-27 07:02:21', ''),
-(9, 'Test', 'a.png', 0, 'NA', 4, 0, '2019-02-27 07:16:06', 'w'),
-(10, 'hey', '', 0, 'NA', 4, 0, '2019-02-27 07:16:53', ''),
-(11, 'as', '', 0, 'NA', 4, 0, '2019-02-27 07:18:09', ''),
-(12, 'fage', '', 0, 'NA', 4, 0, '2019-02-27 07:18:27', ''),
-(13, 'Test', '', 0, 'NA', 4, 0, '2019-02-27 07:21:04', ''),
-(14, 'Test', 'a.png', 0, 'NA', 4, 0, '2019-02-27 07:21:49', 'testing...'),
-(15, 'hey', '', 0, 'MATHEMATICS', 8, 0, '2019-02-27 07:39:53', 'b');
+(3, 'Test', 'tnail.png', 0, 'NA', 4, 0, '2019-02-27 09:22:53', 'testing...'),
+(16, 'How to Php', '1.png', 7, 'SCIENCE', 4, 0, '2019-02-27 11:49:54', 'This course will be teaching php from scratch'),
+(17, 'Algebra', 'algebra.png', 1, 'MATHEMATICS', 4, 0, '2019-03-02 13:12:04', 'This course will tell you about operators and operands'),
+(18, 'Chemistry', 'chemistry.png', 1, 'SCIENCE', 4, 0, '2019-03-02 13:11:09', 'This course will be teaching about basics and invention of chemistry'),
+(19, 'Probability', 'prob.png', 1, 'MATHEMATICS', 4, 0, '2019-03-03 03:22:19', 'This course provides complete knowledge about probability and its types'),
+(21, 'Physics', 'phy.jfif', 2, 'SCIENCE', 4, 0, '2019-03-03 03:25:22', 'This course provides complete knowledge about all major topics in Physics');
 
 --
 -- Indexes for dumped tables
