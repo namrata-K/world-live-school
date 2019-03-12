@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2019 at 10:39 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: Mar 12, 2019 at 02:32 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `phpsamples`
+-- Database: `live_school`
 --
 
 -- --------------------------------------------------------
@@ -33,47 +33,56 @@ CREATE TABLE `tbl_comment` (
   `parent_comment_id` int(11) DEFAULT NULL,
   `comment` varchar(200) NOT NULL,
   `comment_sender_name` varchar(40) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `link` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_comment`
 --
 
-INSERT INTO `tbl_comment` (`comment_id`, `parent_comment_id`, `comment`, `comment_sender_name`, `date`) VALUES
-(1, 0, '  asd', 'asd', '2017-12-14 07:54:57'),
-(2, 0, '  sss', 'Vincy', '2017-12-14 07:56:01'),
-(3, 2, '  ccc', 'xc', '2017-12-14 07:56:12'),
-(4, 0, 'sdf  ', 'sdf', '2017-12-14 07:58:29'),
-(5, 0, '  ', 'as', '2017-12-14 08:02:32'),
-(6, 0, '  sdfsdf', 'dsfdsf', '2017-12-14 08:42:44'),
-(7, 0, '  ssss', 'ss', '2017-12-14 08:42:55'),
-(8, 3, 'New Comment  ', 'Vincy', '2017-12-14 12:33:03'),
-(9, 2, 'jj  ', 'gh', '2017-12-14 12:39:21'),
-(10, 2, 'jj  ', 'ghasdsd', '2017-12-14 12:39:35'),
-(11, 0, '  asdasd', 'asdasd', '2017-12-14 12:40:01'),
-(12, 1, '  asdasd', 'aasd', '2017-12-14 12:40:10'),
-(13, 1, 'sss  ', 'sss', '2017-12-14 12:40:38'),
-(14, 0, '  asdasd', 'asdasd', '2017-12-14 12:40:55'),
-(15, 1, 'vvv', 'vvv', '2017-12-14 12:41:14'),
-(16, 0, '  sss', 'sss', '2017-12-14 12:51:17'),
-(17, 0, '  ', '', '2017-12-14 12:51:21'),
-(18, 0, '  ', '', '2017-12-14 12:51:26'),
-(19, 0, '  ss', 'ss', '2017-12-14 12:51:54'),
-(20, 0, '  sdsd', 'sdsds', '2017-12-14 12:52:11'),
-(21, 0, '  sdsd', 'sddsd', '2017-12-14 13:14:40'),
-(22, 0, 'test  ', 'vincy', '2017-12-14 13:16:25'),
-(23, 21, 'test', 'Reply added by vincy', '2017-12-14 13:16:52'),
-(24, 20, 'reply for sdsd  ', 'vincy', '2017-12-14 13:17:24'),
-(25, 0, '  ss', 'sss', '2017-12-14 13:23:59'),
-(26, 12, 'rep for asdf  ', 'vin', '2017-12-14 13:26:02'),
-(27, 0, 'is this really working?', 'namrata', '2019-02-26 20:35:47'),
-(28, 27, 'yes, it is', 'ishita', '2019-02-26 20:36:11'),
-(29, 0, 'still working?', 'namrata', '2019-02-26 20:44:27'),
-(30, 29, 'yes', 'namrata', '2019-02-26 20:44:40'),
-(31, 6, 'another reply', 'namrata', '2019-02-26 20:45:05'),
-(32, 31, 'reply to reply', 'namrata', '2019-02-26 20:45:31'),
-(33, 31, 'yo', 'namrata', '2019-02-26 20:45:54');
+INSERT INTO `tbl_comment` (`comment_id`, `parent_comment_id`, `comment`, `comment_sender_name`, `date`, `link`) VALUES
+(34, 0, 'priya', 'Priya', '2019-03-03 09:38:40', ''),
+(35, 0, 'hey', 'Priya', '2019-03-03 09:39:18', ''),
+(36, 0, 'hey', 'Priya', '2019-03-03 09:44:16', ''),
+(37, 0, 'hy', 'Priya', '2019-03-03 09:45:17', ''),
+(38, 0, 'hy', 'Priya', '2019-03-03 09:45:21', ''),
+(39, 0, 'hey', 'Priya', '2019-03-03 09:47:49', ''),
+(40, 0, 'hey', 'Priya', '2019-03-03 09:47:49', ''),
+(41, 0, 'hey', 'Priya', '2019-03-03 09:47:55', ''),
+(42, 0, 'hey', 'Priya', '2019-03-03 09:48:18', ''),
+(43, 0, 'hey', 'Priya', '2019-03-03 09:48:20', ''),
+(44, 0, 'hey', 'Priya', '2019-03-03 09:48:26', ''),
+(45, 0, 'hey', 'Priya', '2019-03-03 09:48:43', ''),
+(46, 0, 'hey', 'Priya', '2019-03-03 09:48:44', ''),
+(47, 0, 'hey', 'Priya', '2019-03-03 09:48:44', ''),
+(48, 0, 'hey', 'Priya', '2019-03-03 09:48:45', ''),
+(49, 0, 'pr', 'Priya', '2019-03-03 09:49:27', ''),
+(50, 0, 'hey', 'Priya', '2019-03-03 09:50:18', ''),
+(51, 0, 'hey', 'Priya', '2019-03-03 09:50:19', ''),
+(52, 0, 'hey', 'Priya', '2019-03-03 09:50:20', ''),
+(53, 0, 'hey', 'Priya', '2019-03-03 09:50:20', ''),
+(54, 0, 'hey', 'Priya', '2019-03-03 09:50:21', ''),
+(55, 0, 'hey', 'Priya', '2019-03-03 09:50:21', ''),
+(56, 0, 'hey', 'Priya', '2019-03-03 09:50:21', ''),
+(57, 0, 'priya', 'Priya', '2019-03-03 09:51:24', ''),
+(58, 0, 'priya', 'Priya', '2019-03-03 09:51:26', ''),
+(59, 0, 'priya', 'Priya', '2019-03-03 09:51:26', ''),
+(60, 0, 'priya', 'Priya', '2019-03-03 09:51:27', ''),
+(61, 0, 'priya', 'Priya', '2019-03-03 09:51:50', ''),
+(62, 0, 'priya', 'Priya', '2019-03-03 09:51:51', ''),
+(63, 0, 'priya', 'Priya', '2019-03-03 09:51:51', ''),
+(64, 0, 'priya', 'Priya', '2019-03-03 09:51:51', ''),
+(65, 0, 'priya', 'Priya', '2019-03-03 09:51:51', ''),
+(66, 0, 'priya', 'Priya', '2019-03-03 09:51:51', ''),
+(67, 0, 'priya', 'Priya', '2019-03-03 09:51:55', ''),
+(68, 0, 'priya', 'Priya', '2019-03-03 09:51:56', ''),
+(69, 0, 'priya', 'Priya', '2019-03-03 09:51:56', ''),
+(70, 0, 'priya', 'Priya', '2019-03-03 09:51:56', ''),
+(71, 0, 'priya', 'Priya', '2019-03-03 09:51:56', ''),
+(72, 0, 'priya', 'Priya', '2019-03-03 09:52:20', ''),
+(73, 0, 'hey', 'Priya', '2019-03-03 09:59:22', 'www.google.com'),
+(74, 0, 'search google here', 'Priya', '2019-03-03 10:05:00', 'https://www.google.com');
 
 --
 -- Indexes for dumped tables
@@ -93,7 +102,7 @@ ALTER TABLE `tbl_comment`
 -- AUTO_INCREMENT for table `tbl_comment`
 --
 ALTER TABLE `tbl_comment`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

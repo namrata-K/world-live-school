@@ -24,7 +24,7 @@
   $DataRow = mysqli_fetch_assoc($Execute); 
   if($DataRow)
       {
-      	move_uploaded_file($file["tmp_name"], "uploads/". $file["name"]);
+      	move_uploaded_file($file["tmp_name"], $file["name"]);
       	$query = "INSERT INTO content (tag1,tag2,tag3,tag4,tag5,topic,course_id,content_name,description,content_type,s_no,question,option1,option2,option3,correct) VALUES('$tag1', '$tag2', '$tag3', '$tag4', '$tag5', '$t_name', '$cid', '$file_name', '$desc', '$c_type', '$s_no', '$ques1', '$option11', '$option12', '$option13', '$correct1')";
       	$Execute = mysqli_query($Connection, $query);
       	if($Execute)

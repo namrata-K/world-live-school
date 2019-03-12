@@ -511,6 +511,7 @@
                   $tnail = $row['tnail'];
                   $desc = $row['description'];
                   $content = $row['content_name'];
+                  $rated = $row['rated'];
                  ?>
                 <tr>
                 <td style="vertical-align: middle;"><img style="width: 150px; height: 150px;" src="<?php echo $tnail; ?>"></td>
@@ -534,7 +535,25 @@
                   <td><button class="btn btn-info"><span class="glyphicon glyphicon-education"></span> Take Test</button>
                   <input type="hidden" name="id" id="id" value="<?php echo $contentid ?>">
                 </form>
-
+                <?php 
+                
+                if($rated==0){
+                    ?>
+                
+                <form action="rating.php" method="post" >
+                  <td>
+                      1 <input type="radio" name="radio" value="1"> 
+                      2 <input type="radio" name="radio" value="2"> 
+                      3 <input type="radio" name="radio" value="3"> 
+                      4 <input type="radio" name="radio" value="4"> 
+                      5 <input type="radio" name="radio" value="5"> 
+                      <input type="hidden" name="id" id="id" value="<?php echo $contentid ?>">
+                      <input type="submit" name="submit" value="Rate" class="btn btn-info" />
+                  </td>
+                  <input type="hidden" name="id" id="id" value="<?php echo $contentid ?>">
+                  <input type="hidden" name="course_id" id="course_id" value="<?php echo $courseid ?>">
+                </form>
+                   <?php } ?> 
                 </td>
                 </tr>
                 <?php } ?>
@@ -553,12 +572,11 @@
             <?php 
             while($row = mysqli_fetch_array($result)){
 
-              $tnail = $row['tnail'];
               $desc = $row['description'];
               $content = $row['content_name'];
              ?>
             <tr>
-            <td><img src="<?php echo $content; ?>"></td>
+            <td><img src= " <?php  echo $content ?>"></td>
             <td><?php echo $desc ?></td>
 
             <td>

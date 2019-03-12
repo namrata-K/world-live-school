@@ -494,6 +494,14 @@ input[type="button"]:hover
      <textarea name="comment_content" id="comment_content" class="form-control" placeholder="Enter Comment" rows="5"></textarea>
     </div>
     <div class="form-group">
+     <input type ="text" name="comment_link" id="comment_link" class="form-control" placeholder="Enter supported links, if any" />
+    </div>
+
+    <!-- <div class="form-group">
+        <label for="file" style="color: black;">Upload Video</label>
+        <input type="file" class="form-control" name ="file" id="file" aria-describedby="name" />
+    </div> -->
+    <div class="form-group">
      <input type="hidden" name="comment_id" id="comment_id" value="0" />
      <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" />
     </div>

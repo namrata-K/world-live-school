@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2019 at 08:52 AM
+-- Generation Time: Mar 12, 2019 at 02:32 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -47,7 +47,9 @@ INSERT INTO `signup_teacher` (`uname`, `password`, `name`, `dob`, `email`, `qual
 ('priyagupta2', 'priya', 'Priya gupta', '1999-06-20', 'priyag20061', 'UG', 'Occupation', 1),
 ('priya_gupta', 'priya', 'Priya gupta', '1999-06-20', 'priyag20061', 'B.tech', 'Occupation', 2),
 ('priyagupta', 'priya', 'Priya gupta', '1999-06-20', 'priyag20061', 'UG', 'Occupation', 3),
-('priyaa', 'priya', 'Priya gupta', '1999-06-20', 'priya@gmail', 'ab', 'Occupation', 4);
+('priyaa', 'priya', 'Priya gupta', '1999-06-20', 'priya@gmail', 'ab', 'Occupation', 4),
+('bjk', 'jkb', 'Priya gupta', '9999-09-09', 'priya@gmail', 'dj', 'Occupation', 5),
+('vsdz', 'hbjb', 'hgfh', '1999-07-09', 'vghv@gmail.', 'hbjh', 'Occupation', 6);
 
 --
 -- Indexes for dumped tables
@@ -67,7 +69,7 @@ ALTER TABLE `signup_teacher`
 -- AUTO_INCREMENT for table `signup_teacher`
 --
 ALTER TABLE `signup_teacher`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

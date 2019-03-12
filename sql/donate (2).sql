@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2019 at 08:51 AM
+-- Generation Time: Mar 12, 2019 at 02:31 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -50,7 +50,9 @@ INSERT INTO `donate` (`name`, `contact`, `email`, `id`, `child_id`) VALUES
 ('Priya gupta', 0, '', 7, 5),
 ('Priya gupta', 8, 'priyag20061999@gmail', 8, 5),
 ('', 0, '', 9, 0),
-('Priya gupta', 2147483647, 'priyag20061999@gmail', 10, 1);
+('Priya gupta', 2147483647, 'priyag20061999@gmail', 10, 1),
+('', 0, '', 11, 0),
+('Priya gupta', -1, 'priyag20061999@gmail', 12, 4);
 
 --
 -- Indexes for dumped tables
@@ -70,7 +72,7 @@ ALTER TABLE `donate`
 -- AUTO_INCREMENT for table `donate`
 --
 ALTER TABLE `donate`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

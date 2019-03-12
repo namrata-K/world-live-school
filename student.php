@@ -515,7 +515,7 @@
                     
 
                     <?php
-                            $query = "SELECT * FROM COURSE WHERE level = '$level' AND course_id <> '$course__id' ";
+                            $query = "SELECT * FROM COURSE WHERE level = '$level'  ";
                             $Execute = mysqli_query($Connection, $query);
                             $DataRow = mysqli_fetch_array($Execute);
 
@@ -581,7 +581,7 @@
 
 
                 <?php
-                            $query = "SELECT * FROM COURSE WHERE subject = '$subject' AND course_id <> '$course__id' ";
+                            $query = "SELECT * FROM COURSE WHERE subject = '$subject'  ";
                             $Execute = mysqli_query($Connection, $query);
                             $DataRow = mysqli_fetch_array($Execute);
                         ?>

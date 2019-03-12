@@ -21,7 +21,7 @@
   $query = "INSERT INTO course (course_name,thumbnail,level,subject,teacher_id,rating,description, course_id) VALUES('$c_name', '$file_name', '$level', '$subject', '$teacher_id', 0 , '$desc', '$id')";
     $Execute = mysqli_query($Connection, $query);
     if($Execute)
-            { move_uploaded_file($file["tmp_name"], "thumbnails/". $file["name"]);
+            { move_uploaded_file($file["tmp_name"], $file["name"]);
               ?>    <script LANGUAGE='JavaScript'>
                      window.alert('Course created successfully. Your COURSE ID is:'+  <?php echo $id; ?>  );
                      window.location.href='teacherprofile.php';

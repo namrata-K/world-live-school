@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2019 at 03:54 AM
+-- Generation Time: Mar 12, 2019 at 02:32 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -25,29 +25,48 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog`
+-- Table structure for table `previously_watched`
 --
 
-CREATE TABLE `blog` (
-  `course_id` int(5) NOT NULL,
-  `title` varchar(20) NOT NULL,
-  `description` varchar(5000) NOT NULL
+CREATE TABLE `previously_watched` (
+  `student_id` int(5) NOT NULL,
+  `content_id` int(5) NOT NULL,
+  `pvsid` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `blog`
+-- Dumping data for table `previously_watched`
 --
 
-INSERT INTO `blog` (`course_id`, `title`, `description`) VALUES
-(0, 'hey', 'hello'),
-(0, 'blog', 'jvsgkjehlzkkgl.k'),
-(0, ' \"MISSION KISAAN\"', 'testing...'),
-(0, ' \"MISSION KISAAN\"', 'w'),
-(0, 'ey', 'hey'),
-(0, ' \"MISSION KISAAN\"', 'testing...'),
-(0, ' \"MISSION KISAAN\"', 'testing...'),
-(1, ' \"MISSION KISAAN\"', 'testing...'),
-(3, 'title', 'ALgebra course');
+INSERT INTO `previously_watched` (`student_id`, `content_id`, `pvsid`) VALUES
+(8, 3, 1),
+(8, 4, 2),
+(8, 4, 3),
+(8, 4, 4),
+(8, 4, 5),
+(8, 4, 6),
+(8, 3, 7),
+(8, 3, 8);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `previously_watched`
+--
+ALTER TABLE `previously_watched`
+  ADD PRIMARY KEY (`pvsid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `previously_watched`
+--
+ALTER TABLE `previously_watched`
+  MODIFY `pvsid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

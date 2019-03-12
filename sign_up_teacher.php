@@ -32,7 +32,7 @@ function redirect_to($NewLocation){
     			$Execute=mysqli_query($Connection, $Query);
 				if($Execute){ ?>
 	   				<script LANGUAGE='JavaScript'>
-                     window.alert('Account created successfully. Please login to continue.');
+                     window.alert('Application submitted successfully. Please wait for our email to know if you are se;ected to upload the content.');
                      window.location.href='home.php';
                      </script>
                     <?php

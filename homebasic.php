@@ -399,14 +399,6 @@
               <input type="text" class="form-control" name="qual" id="qual" aria-describedby="name" placeholder="Enter your Qualification">
           </div>
           <div class="form-group">
-          <label for="file" style="color: black;">Upload your aadhar card</label>
-                <input type="file" class="form-control" name ="file" id="file" aria-describedby="name" placeholder="Upload aadhar here">
-          </div>
-          <div>
-            <label for="file" style="color: black;">Upload a demo video</label>
-                <input type="file" class="form-control" name ="file" id="file" aria-describedby="name" placeholder="Upload a demo video here">
-          </div>
-          <div class="form-group">
               <label for="text" style="color: black;">Occupation</label>
               <input type="text" class="form-control" name="occ" id="occ" aria-describedby="name" placeholder="Enter your Occupation">
           </div>
@@ -418,7 +410,6 @@
               <label for="text" style="color: black;">Password</label>
               <input type="text" class="form-control" name="psw" id="psw" aria-describedby="name" placeholder="Enter your Password ">
           </div>
-
         </div>
         <div class="modal-footer">
         <button type="submit" class="btn btn-danger" name="submit">Sign Up</button> 
@@ -464,95 +455,18 @@
 
 <div class="overlay"></div>
 
-<div class="outer-wrapper">
-<div class="page-wrapper">
-<div class="hero-slider" style="min-height: 100px">
-        <div class="rev-slider">
-            <ul>
-               <li>
-                   <img src="imgfr2.jpg" alt="">
-                   <div class="tp-caption"
-                        data-x="left" data-hoffset="0"
-                        data-y="top" data-voffset="150"
-                        data-transform_idle="o:1;"
-                        data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                        data-start="500">
-                   </div>
-                   <div class="tp-caption"
-                        data-x="left" data-hoffset="0"
-                        data-y="top" data-voffset="210"
-                        data-transform_idle="o:1;"
-                        data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                        data-start="600">
-                   </div>
-                   <div class="tp-caption"
-                        data-x="left" data-hoffset="0"
-                        data-y="top" data-voffset="410"
-                        data-transform_idle="o:1;"
-                        data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                        data-start="700">
-                   </div>
-               </li>
-                <li>
-                    <img src="imgfr3.jpg" alt="">
-                    <div class="tp-caption"
-                         data-x="left" data-hoffset="0"
-                         data-y="top" data-voffset="150"
-                         data-transform_idle="o:1;"
-                         data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                         data-start="500">
-                    </div>
-                    <div class="tp-caption"
-                         data-x="left" data-hoffset="0"
-                         data-y="top" data-voffset="210"
-                         data-transform_idle="o:1;"
-                         data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                         data-start="600">
-                    </div>
-                    <div class="tp-caption"
-                         data-x="left" data-hoffset="0"
-                         data-y="top" data-voffset="410"
-                         data-transform_idle="o:1;"
-                         data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                         data-start="700">
-                    </div>
-                </li>
-                <li>
-                    <img src="imgfr4.jpg" alt="">
-                    <div class="tp-caption"
-                         data-x="left" data-hoffset="0"
-                         data-y="top" data-voffset="150"
-                         data-transform_idle="o:1;"
-                         data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                         data-start="500">
-                    </div>
-                    <div class="tp-caption"
-                         data-x="left" data-hoffset="0"
-                         data-y="top" data-voffset="210"
-                         data-transform_idle="o:1;"
-                         data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                         data-start="600">
-                    </div>
-                    <div class="tp-caption"
-                         data-x="left" data-hoffset="0"
-                         data-y="top" data-voffset="410"
-                         data-transform_idle="o:1;"
-                         data-transform_in="x:50px;opacity:0;s:700;e:Power3.easeInOut;"
-                         data-start="700">
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-</div>
+<center>
+	<b class="outer-wrapper" style="font-size: 50px; color: black">
+		École
+	</b>
+</center>
 
 <!-- Second Container -->
-<div class="container-fluid bg-2 text-center">
-  <h3 class="margin"><a id="aboutus">ABOUT US</a></h3>
-  <q>We at école believe that education is the elementary right of every student. Hence, a team of 6 decided to take up the initiative to connect the students in need of education and knowledge with the people who already possess it in abundance but need a platform to share it.
+<div class="container-fluid bg-2 text-center" style="background-color: white; color: black; font-size: 30px">
+  <h3 class="margin" style="background-color: white; color: black; font-size: 40px"><a id="aboutus">ABOUT US</a></h3>
+  <p style="font-size: 30px">We at école believe that education is the elementary right of every student. Hence, a team of 6 decided to take up the initiative to connect the students in need of education and knowledge with the people who already possess it in abundance but need a platform to share it.
   École provides a free online virtual school environment for students who can’t afford it, with the help of the content creators, hence, providing both a platform to connect and excel. Our website is accessible to the differently abled students too so that there remains no barrier in educating themselves. 
- </q>
+ </p>
  
 </div>
 
@@ -564,8 +478,7 @@
 	    <div class="col-sm-4" style="border-top: 20%">
 	    	<center>
 		    	<div class="card" style="width: 50rem;">
-				  <img style="height: 250px; width: 500px" class="card-img-top" src="author.jpg" alt="Card image cap">
-				  <div class="card-body">
+				    <div class="card-body">
 				  	<blockquote>
 					    <p>After I heard about this initiative, I have been telling my friends that ecole is the best way to impart our knowledge to the one's who need it to change their lives.</p>
 					    <footer>Ms Savita Gupta. <br> Shalimar Bagh, Delhi. <br> Housewife</footer>
@@ -577,8 +490,7 @@
 	    <div class="col-sm-4"> 
 	    	<center>
 		    	<div class="card" style="width: 50rem;">
-				  <img style="height: 250px; width: 500px" class="card-img-top" src="story.jpg" alt="Card image cap">
-				  <div class="card-body">
+				    <div class="card-body">
 				  	<blockquote>
 					    <p>After my retirement I have a lot of time on my hands. ecole looks promising to people like me across the globe.Looking forward to use this website.</p>
 					    <footer> Prof. Sunil Sharma. <br> Kashmere Gate, Delhi. <br> Retired Math Professor.</footer>
@@ -590,7 +502,6 @@
 	    <div class="col-sm-4"> 
 	    	<center>
 		    	<div class="card" style="width: 50rem;">
-				  <img style="height: 250px; width: 500px" class="card-img-top" src="orphan.jpg" alt="Card image cap">
 				  <div class="card-body">
 				  	<blockquote>
 					    <p>I would learn dance and music. i am also goo at maths. We have 10 computers and we use them to play games sometimes. I want to come first in whatever I do.</p>
@@ -604,16 +515,10 @@
 	</div>
 </center>
 
- <div class="container-fluid bg-2">
-  <center>
-<img src="countergif.gif" height="100px" width="250px" align="center" />
-
-</center>
+ <div style="background-color: white; color: black; font-size: 25px" class="container-fluid bg-2">
+  
 <center>
-  <B><a id="donate"><font size="20">NUMBER OF LIVES CHANGED!</font></a></B>
-</center>
-<center>
-  <p>"Join us to sponsor a child's Education anywhere around the globe. Your donations will help them live a life with diginty, confidence and optimism. Donate today by clicking on the below mentioned link and make the World a better place for all.
+  <p style="background-color: white; color: black; font-size: 25px">"Join us to sponsor a child's Education anywhere around the globe. Your donations will help them live a life with diginty, confidence and optimism. Donate today by clicking on the below mentioned link and make the World a better place for all.
   </p>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     Click here to donate
@@ -626,25 +531,21 @@
   <h3 class="margin"><a id="services">OUR SERVICES</a></h3>
 
   <div class="col-sm-4">
-    <img src="trophy.png" height="20%" width=20%>
     <B align="center"><font size="5">Oppurtunities</B> 
 <p>We aim at providing a better shot at education to the orphans enrolled in our system by connecting them to donors from across the World. The top 3 scores if our class room programs will be recommended to the logged in donor. 
 </p>
   </div>
     <div class="col-sm-4">
-    <img src="class.png" height="20%" width=20%>
     <B align="center"><font size="5">Virtual Classroom</B> 
 <p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all materials. 
 </p>
   </div>
   <div class="col-sm-4">
-    <img src="tts.jpg" height="20%" width=20%>
     <B align="center"><font size="5">Text to Speech</B> 
 <p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all materials. 
 </p>
   </div>
 <div class="col-sm-4">
-    <img src="people.jpg" height="20%" width=20%>
     <B align="center"><font size="5">Network Building</B> 
 <p>We offer a complete class room experience to the children, with Certified courses from Cognizant, offline access (downloadable) to all materials. 
 </p>
